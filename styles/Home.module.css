@@ -25,3 +25,12 @@
   color: #fff;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 668px) {
+  div.container{
+    flex-direction: column;
+  }
+  button.btn{
+    margin: 20px 0px 20px 0px;
+  }
+}
