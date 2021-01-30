@@ -11,7 +11,9 @@ cache:
 
 pages:
   script:
-    - cp .env.example .env.local 
+    - cp .env.example .env.production
+    - cp .env.example .env.local
+    - cp .env.example .env
     - yarn build
     - rm -rf public/*
     - mv out/* public
