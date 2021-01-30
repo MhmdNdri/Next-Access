@@ -8,9 +8,11 @@ export default function Home() {
     <div className={styles.container}>
       {/* <ReactNotifications /> */}
       <Head>
+
         <title>Accessibilty</title>
-        <link rel="icon" href="/tools.png" />
-        <link rel="manifest" href="./manifest.json" />
+        <base href="/pwa-sample/" />
+        <link rel="icon" href="tools.png" />
+        <link rel="manifest" href="manifest.json" />
         <meta name='application-name' content='PWA App' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />
