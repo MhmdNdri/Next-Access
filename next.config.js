@@ -5,8 +5,8 @@ module.exports = withPWA({
     pwa: {
         disable: process.env.NODE_ENV === 'development',
         register: true,
-        scope: '/pwa-sample/',
-        sw: 'service-worker.js',
+        scope: '/pwa-sample/service-worker.js',
+        sw: '/pwa-sample/service-worker.js',
         //...
     },
     basePath: process.env.ASSETS_PREFIX,
