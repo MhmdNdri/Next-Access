@@ -1,0 +1,20 @@
+.container {
+    width: 80%;
+    margin: 40px auto
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding:5px 7px;
+    margin-top: 15px;
+    cursor: pointer;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    will-change: background;
+    transition: background .1s;
+}
+.btn:hover{
+    background: blueviolet;
+}

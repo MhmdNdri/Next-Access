@@ -1,0 +1,17 @@
+{
+    "name": "next-access",
+    "short_name": "accessibility",
+    "start_url": "http://localhost:3000/",
+    "display": "standalone",
+    "background_color": "#90cdf4",
+    "theme_color": "#90cdf4",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/tools.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      }
+    ]
+}
