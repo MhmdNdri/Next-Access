@@ -21,20 +21,23 @@ export default function Home() {
       <Link href="/mic">
         <button className={styles.btn}>Your Microphone</button>
       </Link>
+      <Link href="/bluetooth">
+        <button className={styles.btn}>Bluetooth</button>
+      </Link>
+      <Link href="/share">
+        <button className={styles.btn}>Share</button>
+      </Link>
       <Link href="/notification">
         <button className={styles.btn}>Notification</button>
       </Link>
       <Link href="/clipboard">
         <button className={styles.btn}>ClipBoard</button>
       </Link>
-      <Link href="/share">
-        <button className={styles.btn}>Share</button>
-      </Link>
       <Link href="/vibration">
         <button className={styles.btn}>Vibration</button>
       </Link>
-      <Link href="/bluetooth">
-        <button className={styles.btn}>Bluetooth</button>
+      <Link href="/battery">
+        <button className={styles.btn}>Battery</button>
       </Link>
     </div>
   )
