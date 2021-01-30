@@ -4,7 +4,7 @@ const Vibration = () => {
 
     const vibrateHandler = () => {
 
-        process.browser ? window.navigator.vibrate(1000) : null
+        navigator.vibrate(1000)
 
     }
     return (

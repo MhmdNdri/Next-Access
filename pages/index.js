@@ -33,6 +33,9 @@ export default function Home() {
       <Link href="/vibration">
         <button className={styles.btn}>Vibration</button>
       </Link>
+      <Link href="/bluetooth">
+        <button className={styles.btn}>Bluetooth</button>
+      </Link>
     </div>
   )
 }
