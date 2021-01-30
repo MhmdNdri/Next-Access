@@ -30,6 +30,9 @@ export default function Home() {
       <Link href="/share">
         <button className={styles.btn}>Share</button>
       </Link>
+      <Link href="/vibration">
+        <button className={styles.btn}>Vibration</button>
+      </Link>
     </div>
   )
 }
