@@ -3,7 +3,7 @@ const withPWA = require('next-pwa')
 
 module.exports = withPWA({
     pwa: {
-        dest: 'public'
+        dest: 'out'
     },
     basePath: process.env.ASSETS_PREFIX,
     assetPrefix: process.env.ASSETS_PREFIX,
