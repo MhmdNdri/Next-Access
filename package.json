@@ -23,7 +23,9 @@
     "react-notifications-component": "^3.0.3",
     "react-share-button": "0.0.4",
     "react-voice-recorder": "^2.0.7",
-    "react-webcam": "^5.2.2"
+    "react-webcam": "^5.2.2",
+    "sweetalert2": "^10.14.0",
+    "sweetalert2-react-content": "^3.2.2"
   },
   "devDependencies": {
     "@babel/preset-stage-1": "^7.8.3",
