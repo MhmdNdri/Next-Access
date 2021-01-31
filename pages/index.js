@@ -21,6 +21,9 @@ export default function Home() {
       <Link href="/mic">
         <button className={styles.btn}>Your Microphone</button>
       </Link>
+      <Link href="/totext">
+        <button className={styles.btn}>Speech to Text</button>
+      </Link>
       <Link href="/bluetooth">
         <button className={styles.btn}>Bluetooth</button>
       </Link>

@@ -3,9 +3,7 @@ import React from 'react'
 const Vibration = () => {
 
     const vibrateHandler = () => {
-
-        navigator.vibrate(1000)
-
+        process.browser ? window.navigator.vibrate(1000) : null
     }
     return (
         <div>
