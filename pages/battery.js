@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "../styles/Location.module.css"
 
 const Battery = () => {
 
@@ -17,7 +18,7 @@ const Battery = () => {
                 updateChargeInfo();
             });
             function updateChargeInfo() {
-                console.log("Battery charging? "
+                alert("Battery charging? "
                     + (battery.charging ? "Yes" : "No"));
             }
 
@@ -49,9 +50,9 @@ const Battery = () => {
 
     }
     return (
-        <div>
-            <button onClick={getBattery}>
-                Battery
+        <div className={styles.container}>
+            <button className={styles.btn} onClick={getBattery}>
+                Show me the Battery Status
             </button>
         </div>
     )

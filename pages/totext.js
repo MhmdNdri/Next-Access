@@ -5,8 +5,6 @@ const SpeechToText = () => {
 
     process.browser ? window.SpeechRecognition : null
 
-    const recognition = new SpeechRecognition();
-
     const sound = document.querySelector('.sound');
     console.log(sound)
 

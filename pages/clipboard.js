@@ -32,10 +32,11 @@ export default function clipboard() {
         <div className={styles.container}>
             <input type="text"
                 value={text}
+                className={styles.input}
                 onChange={(e) => setText(e.target.value)} />
 
             <CopyToClipboard text={text}>
-                <button onClick={onCopy} title="Copy">Copy</button>
+                <button className={styles.btn} onClick={onCopy} title="Copy">Copy</button>
             </CopyToClipboard>
 
         </div>
