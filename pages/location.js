@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
+import styles from "../styles/Location.module.css"
 import fetch from "node-fetch"
 
 
@@ -25,8 +26,8 @@ const Location = () => {
 
 
     return (
-        <div>
-            <button onClick={getUserLocationDetails}>Show My Location Details</button>
+        <div className={styles.container}>
+            <button className={styles.btn} onClick={getUserLocationDetails}>Show My Location Details</button>
             {latitude && longitude &&
                 <ul>
                     {/* <li>
@@ -38,8 +39,8 @@ const Location = () => {
                     <li>
                         City : {details.city}
                     </li> */}
-                    <li>
-                        Latitude & Longitude :{`${latitude} ----- ${longitude}`}
+                    <li className={styles.items}>
+                        Latitude & Longitude: {`( ${latitude} & ${longitude} )`}
                     </li>
                     {/* <li>
                         IP Address: {details.IPv4}
@@ -47,7 +48,7 @@ const Location = () => {
                 </ul>}
 
             <Link href="/">
-                <a>Back To Home Page</a>
+                <a className={styles.backToHome}> &#8592; Back To Home Page</a>
             </Link>
         </div>
     )
