@@ -1,5 +1,6 @@
 import React from 'react'
 import Push from "push.js"
+import styles from "../styles/Location.module.css"
 const Notification = () => {
 
     const sendNotification = () => {
@@ -22,8 +23,8 @@ const Notification = () => {
         });
     }
     return (
-        <div>
-            <button onClick={sendNotification}>
+        <div className={styles.container}>
+            <button className={styles.btn} onClick={sendNotification}>
                 Send A notification
             </button>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from "../styles/Location.module.css"
 const Bluetooth = () => {
 
     const bluetoothHandler = () => {
@@ -17,8 +17,8 @@ const Bluetooth = () => {
             .catch(error => { console.error(error); });
     }
     return (
-        <div>
-            <button onClick={bluetoothHandler}>
+        <div className={styles.container}>
+            <button className={styles.btn} onClick={bluetoothHandler}>
                 bluetooth
             </button>
         </div>

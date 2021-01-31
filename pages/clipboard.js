@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import styles from "../styles/Clipboard.module.css"
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function clipboard() {
@@ -28,7 +29,7 @@ export default function clipboard() {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             <input type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)} />
