@@ -1,6 +1,6 @@
 
-
 import React from 'react';
+import styles from "../styles/Mic.module.css"
 import MicRecorder from 'mic-recorder-to-mp3';
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
@@ -48,13 +48,16 @@ export default class Mic extends React.Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <button onClick={this.start} disabled={this.state.isRecording}>Record</button>
-                    <button onClick={this.stop} disabled={!this.state.isRecording}>Stop</button>
-                    <audio src={this.state.blobURL} controls="controls" />
-                </header>
+            <div className={styles.container}>
+                <div className="App">
+                    <header className={styles.micContainer}>
+                        <audio className={styles.audio} src={this.state.blobURL} controls="controls" />
+                        <button className={styles.btn} onClick={this.start} disabled={this.state.isRecording}>Record</button>
+                        <button className={styles.btn} onClick={this.stop} disabled={!this.state.isRecording}>Stop</button>
+                    </header>
+                </div>
             </div>
+
         );
     }
 }
