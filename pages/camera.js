@@ -1,6 +1,7 @@
 import React, { useRef, useCallback, useState } from 'react'
 import Webcam from "react-webcam";
 import Link from 'next/link';
+import styles from "../styles/Location.module.css"
 // class AppStreamCam extends React.Component {
 //     constructor(props) {
 //         super(props);
@@ -105,23 +106,23 @@ const camera = () => {
     );
 
     return (
-        <div>
+        <div className={styles.container}>
             <Webcam
                 audio={true}
                 height={500}
                 ref={webcamRef}
                 screenshotFormat="image/jpeg"
             />
-            <button onClick={capture}>Capture photo</button> <br />
+            <button className={styles.btn} onClick={capture}>Capture photo</button> <br />
             <br />
             {capturing ? (
-                <button onClick={handleStopCaptureClick}>Stop Capture</button>
+                <button className={styles.btn} onClick={handleStopCaptureClick}>Stop Capture</button>
             ) : (
-                    <button onClick={handleStartCaptureClick}>Start Capture</button>
+                    <button className={styles.btn} onClick={handleStartCaptureClick}>Start Capture</button>
                 )}
 
             {recordedChunks.length > 0 && (
-                <button onClick={handleDownload}>Download</button>
+                <button className={styles.btn} onClick={handleDownload}>Download</button>
             )}
 
 
@@ -133,7 +134,7 @@ const camera = () => {
             }
 
             <Link href="/">
-                <a>Back To Home Page</a>
+                <a className={styles.backToHome}>Back To Home Page</a>
             </Link>
         </div >
     );
