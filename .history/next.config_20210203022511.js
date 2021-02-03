@@ -1,6 +1,6 @@
 const withPWA = require('next-pwa')
 // const withOffline = require('next-offline')
-const runtimeCaching = require("next-pwa/cache");
+// const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA({
     basePath: process.env.ASSETS_PREFIX,
@@ -13,7 +13,9 @@ module.exports = withPWA({
     pwa: {
         dest: 'public',
         // disable: process.env.NODE_ENV === 'development',
-        runtimeCaching,
+        register: true,
+        sw: 'sw.js',
+        // runtimeCaching,
         subdomainPrefix: '/pwa-sample',
     },
 

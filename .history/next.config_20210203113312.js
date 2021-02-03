@@ -21,7 +21,7 @@ module.exports = withPWA({
         urlPattern: '/pwa-sample/',
         // use NetworkFirst or NetworkOnly if you redirect un-authenticated user to login page
         // use StaleWhileRevalidate if you want to prompt user to reload when new version available
-        handler: 'NetworkFirst',
+        handler: 'CacheFirst',
         options: {
           // don't change cache name
           cacheName: 'start-url',
@@ -44,7 +44,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-font-assets',
           expiration: {
@@ -55,7 +55,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-image-assets',
           expiration: {
@@ -66,7 +66,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:js)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-js-assets',
           expiration: {
@@ -77,7 +77,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:css|less)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-style-assets',
           expiration: {
@@ -88,7 +88,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:json|xml|csv)$/i,
-        handler: 'NetworkFirst',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-data-assets',
           expiration: {
@@ -99,7 +99,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\/api\/.*$/i,
-        handler: 'NetworkFirst',
+        handler: 'CacheFirst',
         method: 'GET',
         options: {
           cacheName: 'apis',
@@ -112,7 +112,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /.*/i,
-        handler: 'NetworkFirst',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'others',
           expiration: {

@@ -21,7 +21,7 @@ module.exports = withPWA({
         urlPattern: '/pwa-sample/',
         // use NetworkFirst or NetworkOnly if you redirect un-authenticated user to login page
         // use StaleWhileRevalidate if you want to prompt user to reload when new version available
-        handler: 'NetworkFirst',
+        handler: 'CacheFirst',
         options: {
           // don't change cache name
           cacheName: 'start-url',
@@ -44,7 +44,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-font-assets',
           expiration: {
@@ -55,7 +55,7 @@ module.exports = withPWA({
       },
       {
         urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'static-image-assets',
           expiration: {
