@@ -1,16 +1,16 @@
 const withPWA = require("next-pwa");
 // const withOffline = require('next-offline')
 const runtimeCaching = require("next-pwa/cache");
+const workbox = require("next-pwa");
 
-// const showNotification = () => {
-//   self.registration.showNotification("Post Sent", {
-//     body: "You are back online and your post was successfully sent!",
-//     icon: "assets/icon/256.png",
-//     badge: "assets/icon/32png.png",
-//   });
-// };
-
-// const bgSync = new backgroundSync.Plugin("myQueueName", {
+const showNotification = () => {
+  self.registration.showNotification("Post Sent", {
+    body: "You are back online and your post was successfully sent!",
+    icon: "assets/icon/256.png",
+    badge: "assets/icon/32png.png",
+  });
+};
+// const bgSync = new workbox.backgroundSync.Plugin("myQueueName", {
 //   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
 
 //   callbacks: {
@@ -42,8 +42,8 @@ module.exports = withPWA(
     options: {
       // don't change cache name
       cacheName: "start-url",
-      backgroundSync: {
-        name: "bgSync",
+      cacheableResponse: {
+        statuses: [200, 302],
       },
       expiration: {
         maxEntries: 1,
@@ -55,6 +55,9 @@ module.exports = withPWA(
     urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
     handler: "CacheFirst",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "google-fonts",
       expiration: {
         maxEntries: 4,
@@ -66,6 +69,9 @@ module.exports = withPWA(
     urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
     handler: "StaleWhileRevalidate",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "static-font-assets",
       expiration: {
         maxEntries: 4,
@@ -77,6 +83,9 @@ module.exports = withPWA(
     urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
     handler: "StaleWhileRevalidate",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "static-image-assets",
       expiration: {
         maxEntries: 64,
@@ -89,16 +98,18 @@ module.exports = withPWA(
     handler: "network-only",
     method: "POST",
     options: {
-      //   backgroundSync: {
-      //     name: "bgSync",
-      //     options: {
-      //       callbacks: {
-      //         queueDidReplay: showNotification,
-      //       },
-      //       maxRetentionTime: 24 * 60, // Retry for max of 24 Hours,
-      //     },
-      //
-      //   },
+      backgroundSync: {
+        name: "bgSync",
+        options: {
+            new Queue ("queueName", {
+                // the new bit
+                callbacks: {
+                  queueDidReplay: showNotification
+                },
+                maxRetentionTime: 24 * 60 // Retry for max of 24 Hours,
+              })
+        },
+      },
       cacheableResponse: {
         statuses: [200, 302],
       },

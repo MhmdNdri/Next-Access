@@ -42,8 +42,8 @@ module.exports = withPWA(
     options: {
       // don't change cache name
       cacheName: "start-url",
-      backgroundSync: {
-        name: "bgSync",
+      cacheableResponse: {
+        statuses: [200, 302],
       },
       expiration: {
         maxEntries: 1,
@@ -55,6 +55,9 @@ module.exports = withPWA(
     urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
     handler: "CacheFirst",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "google-fonts",
       expiration: {
         maxEntries: 4,
@@ -66,6 +69,9 @@ module.exports = withPWA(
     urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
     handler: "StaleWhileRevalidate",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "static-font-assets",
       expiration: {
         maxEntries: 4,
@@ -77,6 +83,9 @@ module.exports = withPWA(
     urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
     handler: "StaleWhileRevalidate",
     options: {
+      cacheableResponse: {
+        statuses: [200, 302],
+      },
       cacheName: "static-image-assets",
       expiration: {
         maxEntries: 64,
@@ -87,7 +96,7 @@ module.exports = withPWA(
   {
     urlPattern: /\.(?:js)$/i,
     handler: "network-only",
-    method: "POST",
+
     options: {
       //   backgroundSync: {
       //     name: "bgSync",
@@ -97,7 +106,7 @@ module.exports = withPWA(
       //       },
       //       maxRetentionTime: 24 * 60, // Retry for max of 24 Hours,
       //     },
-      //
+      //     // plugins: [bgSync],
       //   },
       cacheableResponse: {
         statuses: [200, 302],

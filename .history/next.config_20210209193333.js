@@ -42,9 +42,6 @@ module.exports = withPWA(
     options: {
       // don't change cache name
       cacheName: "start-url",
-      backgroundSync: {
-        name: "bgSync",
-      },
       expiration: {
         maxEntries: 1,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
