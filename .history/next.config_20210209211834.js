@@ -139,9 +139,6 @@ module.exports = withPWA(
     handler: "NetworkFirst",
     method: "GET",
     options: {
-      backgroundSync: {
-        name: "bgSync",
-      },
       cacheName: "apis",
       expiration: {
         maxEntries: 16,
@@ -154,9 +151,6 @@ module.exports = withPWA(
     urlPattern: /.*/i,
     handler: "NetworkFirst",
     options: {
-      backgroundSync: {
-        name: "bgSync",
-      },
       cacheName: "others",
       expiration: {
         maxEntries: 32,
