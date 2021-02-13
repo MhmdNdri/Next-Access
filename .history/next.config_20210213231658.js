@@ -67,11 +67,7 @@ module.exports = withPWA(
     options: {
       backgroundSync: {
         name: "bgSync",
-        options: {
-          onSync: () => {
-            alert("Hellllooooo");
-          },
-        },
+        options: {},
       },
       cacheableResponse: {
         statuses: [200, 302],
