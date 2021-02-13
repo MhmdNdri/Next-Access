@@ -10,13 +10,13 @@ const runtimeCaching = require("next-pwa/cache");
 //   });
 // };
 
-// const bgSync = new backgroundSync.Plugin("myQueueName", {
-//   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
+const bgSync = new backgroundSync.Plugin("myQueueName", {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
 
-//   callbacks: {
-//     queueDidReplay: showNotification,
-//   },
-// });
+  callbacks: {
+    queueDidReplay: showNotification,
+  },
+});
 
 module.exports = withPWA(
   {
@@ -140,7 +140,7 @@ module.exports = withPWA(
     method: "GET",
     options: {
       backgroundSync: {
-        name: "bgSyncApi",
+        name: "bgSync",
       },
       cacheName: "apis",
       expiration: {

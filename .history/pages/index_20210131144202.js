@@ -1,7 +1,9 @@
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
+
+import styles from '../styles/Home.module.css'
+import Link from "next/link"
 // import ReactNotifications from 'react-notifications-component';
 export default function Home() {
+
   return (
     <div className={styles.container}>
       {/* <ReactNotifications /> */}
@@ -40,9 +42,6 @@ export default function Home() {
       <Link href="/battery">
         <button className={styles.btn}>Battery</button>
       </Link>
-      <Link href="/bgSyncTest">
-        <button className={styles.btn}>bgSync</button>
-      </Link>
     </div>
-  );
+  )
 }

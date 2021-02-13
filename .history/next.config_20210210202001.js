@@ -2,21 +2,21 @@ const withPWA = require("next-pwa");
 // const withOffline = require('next-offline')
 const runtimeCaching = require("next-pwa/cache");
 
-// const showNotification = () => {
-//   self.registration.showNotification("Post Sent", {
-//     body: "You are back online and your post was successfully sent!",
-//     icon: "assets/icon/256.png",
-//     badge: "assets/icon/32png.png",
-//   });
-// };
+const showNotification = () => {
+  self.registration.showNotification("Post Sent", {
+    body: "You are back online and your post was successfully sent!",
+    icon: "assets/icon/256.png",
+    badge: "assets/icon/32png.png",
+  });
+};
 
-// const bgSync = new backgroundSync.Plugin("myQueueName", {
-//   maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
+const bgSync = new backgroundSync.Plugin("myQueueName", {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours
 
-//   callbacks: {
-//     queueDidReplay: showNotification,
-//   },
-// });
+  callbacks: {
+    queueDidReplay: showNotification,
+  },
+});
 
 module.exports = withPWA(
   {
@@ -140,7 +140,7 @@ module.exports = withPWA(
     method: "GET",
     options: {
       backgroundSync: {
-        name: "bgSyncApi",
+        name: "bgSync",
       },
       cacheName: "apis",
       expiration: {

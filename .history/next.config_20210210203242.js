@@ -17,6 +17,11 @@ const runtimeCaching = require("next-pwa/cache");
 //     queueDidReplay: showNotification,
 //   },
 // });
+workbox.routing.registerRoute(
+  new RegExp("^https://my-api-server/post/"),
+  workbox.strategies.networkOnly(),
+  "POST"
+);
 
 module.exports = withPWA(
   {
@@ -140,7 +145,7 @@ module.exports = withPWA(
     method: "GET",
     options: {
       backgroundSync: {
-        name: "bgSyncApi",
+        name: "bgSync",
       },
       cacheName: "apis",
       expiration: {

@@ -140,7 +140,7 @@ module.exports = withPWA(
     method: "GET",
     options: {
       backgroundSync: {
-        name: "bgSyncApi",
+        name: "bgSync",
       },
       cacheName: "apis",
       expiration: {

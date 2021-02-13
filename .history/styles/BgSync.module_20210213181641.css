@@ -1,0 +1,10 @@
+.container {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #41463e 0%, #878877  51%, #d3c8c3  100%);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card
