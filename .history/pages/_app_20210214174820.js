@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
   const options = {
