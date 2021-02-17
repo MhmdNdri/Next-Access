@@ -1,31 +1,26 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Snackbar, Button } from "@material-ui/core";
+
 import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
   const [showReload, setShowReload] = useState(false);
-  const [waitingWorker, setWaitingWorker] = useState([]);
-
-  const onSWUpdate = (registration) => {
-    setShowReload(true);
-    setWaitingWorker(registration.waiting);
-  };
-
-  const reloadPage = () => {
-    waitingWorker?.postMessage({ type: "SKIP_WAITING" });
-    setShowReload(false);
-    window.location.reload(true);
-  };
+  const [waitingWorker, setWaitingWorker] =
+    (useState < ServiceWorker) | (null > null);
 
   useEffect(() => {
-    navigator.serviceWorker.register("/pwa-sample/service-worker.js");
-    self.addEventListener("message", (event) => {
-      if (event.data && event.data.type === "SKIP_WAITING") {
-        self.skipWaiting();
+    const options = {
+      body: "Notification Body",
+      vibrate: [100, 50, 100],
+    };
+    function displayNotification() {
+      if (Notification.permission === "granted") {
+        navigator.serviceWorker.getRegistration().then((reg) => {
+          reg.showNotification("Hello Guys", options);
+        });
       }
-    });
+    }
     if ("serviceWorker" in navigator) {
       // Use the window load event to keep the page load performant
       window.addEventListener("load", () => {
@@ -94,17 +89,7 @@ function MyApp({ Component, pageProps }) {
           content="https://yourdomain.com/static/icons/apple-touch-icon.png"
         />
       </Head>
-      <Snackbar
-        open={showReload}
-        message="A new version is available!"
-        onClick={reloadPage}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        action={
-          <Button color="inherit" size="small" onClick={reloadPage}>
-            Reload
-          </Button>
-        }
-      />
+
       <Component {...pageProps} />
     </>
   );

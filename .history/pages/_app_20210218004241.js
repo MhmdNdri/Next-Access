@@ -1,14 +1,15 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Snackbar, Button } from "@material-ui/core";
+
 import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
   const [showReload, setShowReload] = useState(false);
-  const [waitingWorker, setWaitingWorker] = useState([]);
+  const [waitingWorker, setWaitingWorker] =
+    (useState < ServiceWorker) | (null > null);
 
-  const onSWUpdate = (registration) => {
+  const onSWUpdate = (registration: ServiceWorkerRegistration) => {
     setShowReload(true);
     setWaitingWorker(registration.waiting);
   };
@@ -94,17 +95,7 @@ function MyApp({ Component, pageProps }) {
           content="https://yourdomain.com/static/icons/apple-touch-icon.png"
         />
       </Head>
-      <Snackbar
-        open={showReload}
-        message="A new version is available!"
-        onClick={reloadPage}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        action={
-          <Button color="inherit" size="small" onClick={reloadPage}>
-            Reload
-          </Button>
-        }
-      />
+
       <Component {...pageProps} />
     </>
   );

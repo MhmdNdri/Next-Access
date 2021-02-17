@@ -1,26 +1,12 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Snackbar, Button } from "@material-ui/core";
+
 import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
-  const [showReload, setShowReload] = useState(false);
-  const [waitingWorker, setWaitingWorker] = useState([]);
-
-  const onSWUpdate = (registration) => {
-    setShowReload(true);
-    setWaitingWorker(registration.waiting);
-  };
-
-  const reloadPage = () => {
-    waitingWorker?.postMessage({ type: "SKIP_WAITING" });
-    setShowReload(false);
-    window.location.reload(true);
-  };
-
   useEffect(() => {
-    navigator.serviceWorker.register("/pwa-sample/service-worker.js");
+    navigator.serviceWorker.register("/service-worker.js");
     self.addEventListener("message", (event) => {
       if (event.data && event.data.type === "SKIP_WAITING") {
         self.skipWaiting();
@@ -94,17 +80,7 @@ function MyApp({ Component, pageProps }) {
           content="https://yourdomain.com/static/icons/apple-touch-icon.png"
         />
       </Head>
-      <Snackbar
-        open={showReload}
-        message="A new version is available!"
-        onClick={reloadPage}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        action={
-          <Button color="inherit" size="small" onClick={reloadPage}>
-            Reload
-          </Button>
-        }
-      />
+
       <Component {...pageProps} />
     </>
   );

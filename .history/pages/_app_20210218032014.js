@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Snackbar, Button } from "@material-ui/core";
+
 import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
