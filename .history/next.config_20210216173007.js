@@ -54,9 +54,7 @@ module.exports = withPWA(
     handler: "StaleWhileRevalidate",
     options: {
       cacheName: "static-image-assets",
-      broadcastUpdate: {
-        channelName: "update",
-      },
+      broadcastUpdate,
       expiration: {
         maxEntries: 64,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -76,9 +74,7 @@ module.exports = withPWA(
           },
         },
       },
-      broadcastUpdate: {
-        channelName: "update",
-      },
+      broadcastUpdate,
       cacheableResponse: {
         statuses: [200, 302],
       },
@@ -107,9 +103,7 @@ module.exports = withPWA(
       backgroundSync: {
         name: "bgSync",
       },
-      broadcastUpdate: {
-        channelName: "update",
-      },
+      broadcastUpdate,
       cacheName: "static-data-assets",
       expiration: {
         maxEntries: 32,
@@ -140,9 +134,7 @@ module.exports = withPWA(
       backgroundSync: {
         name: "bgSync",
       },
-      broadcastUpdate: {
-        channelName: "update",
-      },
+      broadcastUpdate,
       cacheName: "others",
       expiration: {
         maxEntries: 32,

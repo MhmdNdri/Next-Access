@@ -19,9 +19,7 @@ function MyApp({ Component, pageProps }) {
     if ("serviceWorker" in navigator) {
       // Use the window load event to keep the page load performant
       window.addEventListener("load", () => {
-        window.navigator.serviceWorker.register(
-          "/pwa-sample/service-worker.js"
-        );
+        window.navigator.serviceWorker.register("/service-worker.js");
       });
     }
   });

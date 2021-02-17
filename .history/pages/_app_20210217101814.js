@@ -1,30 +1,25 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { useEffect } from "react";
 import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    const options = {
-      body: "Notification Body",
-      vibrate: [100, 50, 100],
-    };
-    function displayNotification() {
-      if (Notification.permission === "granted") {
-        navigator.serviceWorker.getRegistration().then((reg) => {
-          reg.showNotification("Hello Guys", options);
-        });
-      }
-    }
-    if ("serviceWorker" in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener("load", () => {
-        window.navigator.serviceWorker.register(
-          "/pwa-sample/service-worker.js"
-        );
+  const options = {
+    body: "Notification Body",
+    vibrate: [100, 50, 100],
+  };
+  function displayNotification() {
+    if (Notification.permission === "granted") {
+      navigator.serviceWorker.getRegistration().then((reg) => {
+        reg.showNotification("Hello Guys", options);
       });
     }
-  });
+  }
+  if ("serviceWorker" in navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener("load", () => {
+      window.navigator.serviceWorker.register("/service-worker.js");
+    });
+  }
   return (
     <>
       <Head>
