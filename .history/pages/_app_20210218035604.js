@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     serviceWorker.register({ onUpdate: onSWUpdate });
   }, []);
-
   useEffect(() => {
     navigator.serviceWorker.register("/pwa-sample/service-worker.js");
     self.addEventListener("message", (event) => {
