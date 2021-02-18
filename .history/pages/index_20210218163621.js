@@ -20,6 +20,7 @@ export default function Home() {
     setShowReload(false);
     window.location.reload(true);
   };
+
   useEffect(() => {
     navigator.serviceWorker.register("/pwa-sample/service-worker.js");
     self.addEventListener("message", (event) => {

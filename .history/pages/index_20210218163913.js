@@ -21,7 +21,7 @@ export default function Home() {
     window.location.reload(true);
   };
   useEffect(() => {
-    navigator.serviceWorker.register("/pwa-sample/service-worker.js");
+    navigator.serviceWorker.register("/service-worker.js");
     self.addEventListener("message", (event) => {
       if (event.data && event.data.type === "SKIP_WAITING") {
         self.skipWaiting();

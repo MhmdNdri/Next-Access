@@ -20,13 +20,22 @@ export default function Home() {
     setShowReload(false);
     window.location.reload(true);
   };
+
   useEffect(() => {
-    navigator.serviceWorker.register("/pwa-sample/service-worker.js");
+    navigator.serviceWorker.register("/service-worker.js");
     self.addEventListener("message", (event) => {
       if (event.data && event.data.type === "SKIP_WAITING") {
         self.skipWaiting();
       }
     });
+    if ("serviceWorker" in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener("load", () => {
+        window.navigator.serviceWorker.register(
+          "/pwa-sample/service-worker.js"
+        );
+      });
+    }
   });
 
   return (

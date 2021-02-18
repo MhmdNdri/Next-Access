@@ -20,8 +20,8 @@ export default function Home() {
     setShowReload(false);
     window.location.reload(true);
   };
+  navigator.serviceWorker.register("/service-worker.js");
   useEffect(() => {
-    navigator.serviceWorker.register("/pwa-sample/service-worker.js");
     self.addEventListener("message", (event) => {
       if (event.data && event.data.type === "SKIP_WAITING") {
         self.skipWaiting();

@@ -13,13 +13,14 @@ export default function Home() {
     setWaitingWorker(registration.waiting);
   };
   useEffect(() => {
-    navigator.serviceWorker.register({ onUpdate: onSWUpdate });
+    serviceWorker.register({ onUpdate: onSWUpdate });
   }, []);
   const reloadPage = () => {
     waitingWorker?.postMessage({ type: "SKIP_WAITING" });
     setShowReload(false);
     window.location.reload(true);
   };
+
   useEffect(() => {
     navigator.serviceWorker.register("/pwa-sample/service-worker.js");
     self.addEventListener("message", (event) => {
@@ -27,22 +28,20 @@ export default function Home() {
         self.skipWaiting();
       }
     });
+    if ("serviceWorker" in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener("load", () => {
+        window.navigator.serviceWorker.register(
+          "/pwa-sample/service-worker.js"
+        );
+      });
+    }
   });
 
   return (
     <div className={styles.container}>
       {/* <ReactNotifications /> */}
-      <Snackbar
-        open={showReload}
-        message="A new version is available!"
-        onClick={reloadPage}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        action={
-          <Button color="inherit" size="small" onClick={reloadPage}>
-            Reload
-          </Button>
-        }
-      />
+
       {/* <h1 className={styles.title}>
         Choose the tool you want
       </h1> */}
