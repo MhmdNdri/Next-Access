@@ -85,9 +85,25 @@ export default function Home() {
           <button className={styles.btn}>Your Location</button>
         </Link>
       </motion.div>
-      <Link href="/camera">
-        <button className={styles.btn}>Your Camera</button>
-      </Link>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+      >
+        <Link href="/camera">
+          <button className={styles.btn}>Your Camera</button>
+        </Link>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+      ></motion.div>
+
       <Link href="/mic">
         <button className={styles.btn}>Your Microphone</button>
       </Link>

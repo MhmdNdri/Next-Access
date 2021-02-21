@@ -3,10 +3,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
-import { motion } from "framer-motion";
-// import { registerRoute } from "workbox-routing";
-// import { StaleWhileRevalidate } from "workbox-strategies";
-// import { BroadcastUpdatePlugin } from "workbox-broadcast-update";
 
 export default function Home() {
   // const [showReload, setShowReload] = useState(false);
@@ -32,34 +28,20 @@ export default function Home() {
   //     }
   //   });
   // });
-  // useEffect(() => {
-  //   registerRoute(
-  //     ({ url }) => url.pathname.startsWith("/pwa-sample/"),
-  //     new StaleWhileRevalidate({
-  //       plugins: [new BroadcastUpdatePlugin()],
-  //     })
-  //   );
-  // });
-  // useEffect(() => {
-  //   const wb = new Workbox("/sw.js");
 
-  //   wb.addEventListener("installed", (event) => {
-  //     if (event.isUpdate) {
-  //       // Show “Update App” banner
-  //     }
-  //   });
+  const wb = new Workbox("/sw.js");
 
-  //   wb.register();
-  // });
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    transition: { duration: 5 },
-  };
+  wb.addEventListener("installed", (event) => {
+    if (event.isUpdate) {
+      // Show “Update App” banner
+    }
+  });
+
+  wb.register();
   return (
     <div className={styles.container}>
       {/* <ReactNotifications /> */}
-      {/* <Snackbar
+      <Snackbar
         open={showReload}
         message="A new version is available!"
         onClick={reloadPage}
@@ -69,22 +51,14 @@ export default function Home() {
             Reload
           </Button>
         }
-      /> */}
+      />
       {/* <h1 className={styles.title}>
         Choose the tool you want
       </h1> */}
 
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-      >
-        <Link href="/location">
-          <button className={styles.btn}>Your Location</button>
-        </Link>
-      </motion.div>
+      <Link href="/location">
+        <button className={styles.btn}>Your Location</button>
+      </Link>
       <Link href="/camera">
         <button className={styles.btn}>Your Camera</button>
       </Link>

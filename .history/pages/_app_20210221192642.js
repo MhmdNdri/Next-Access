@@ -2,12 +2,12 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { AnimateSharedLayout } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { motion }
 import { useEffect, useState } from "react";
 import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
   // useEffect(() => {
   //   if ("serviceWorker" in navigator && "SyncManager" in window) {
   //     navigator.serviceWorker.getRegistrations().then(function (registrations) {
@@ -86,29 +86,9 @@ function MyApp({ Component, pageProps, router }) {
         />
       </Head>
 
-      <motion.div
-        exit="pageExit"
-        key={router.route}
-        initial="pageInitial"
-        animate="pageAnimate"
-        transition={{ duration: 0.7 }}
-        variants={{
-          pageInitial: {
-            opacity: 0,
-            backgroundColor: "red",
-          },
-          pageAnimate: {
-            opacity: 1,
-          },
-          pageExit: {
-            backgroundColor: "black",
-            filter: `invert()`,
-            opacity: 0,
-          },
-        }}
-      >
+      <AnimateSharedLayout>
         <Component {...pageProps} />
-      </motion.div>
+      </AnimateSharedLayout>
     </>
   );
 }

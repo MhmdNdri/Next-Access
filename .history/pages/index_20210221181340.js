@@ -54,7 +54,6 @@ export default function Home() {
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-    transition: { duration: 5 },
   };
   return (
     <div className={styles.container}>
@@ -80,6 +79,7 @@ export default function Home() {
         initial="hidden"
         animate="visible"
         variants={variants}
+        transition={{ duration: 0.1 }}
       >
         <Link href="/location">
           <button className={styles.btn}>Your Location</button>

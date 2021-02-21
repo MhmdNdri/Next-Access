@@ -51,11 +51,7 @@ export default function Home() {
 
   //   wb.register();
   // });
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    transition: { duration: 5 },
-  };
+
   return (
     <div className={styles.container}>
       {/* <ReactNotifications /> */}
@@ -74,17 +70,9 @@ export default function Home() {
         Choose the tool you want
       </h1> */}
 
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-      >
-        <Link href="/location">
-          <button className={styles.btn}>Your Location</button>
-        </Link>
-      </motion.div>
+      <motion.Link href="/location" layoutId="location">
+        <button className={styles.btn}>Your Location</button>
+      </motion.Link>
       <Link href="/camera">
         <button className={styles.btn}>Your Camera</button>
       </Link>

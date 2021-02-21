@@ -74,17 +74,16 @@ export default function Home() {
         Choose the tool you want
       </h1> */}
 
+      <Link href="/location">
+        <button className={styles.btn}>Your Location</button>
+      </Link>
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial="hidden"
         animate="visible"
         variants={variants}
-      >
-        <Link href="/location">
-          <button className={styles.btn}>Your Location</button>
-        </Link>
-      </motion.div>
+      ></motion.div>
       <Link href="/camera">
         <button className={styles.btn}>Your Camera</button>
       </Link>

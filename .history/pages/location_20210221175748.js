@@ -28,9 +28,21 @@ const Location = () => {
       </button>
       {latitude && longitude && (
         <ul>
+          {/* <li>
+                        Country Code : {details.country_code}
+                    </li>
+                    <li>
+                        Country Name: {details.country_name}
+                    </li>
+                    <li>
+                        City : {details.city}
+                    </li> */}
           <li className={styles.items}>
             Latitude & Longitude: {`( ${latitude} & ${longitude} )`}
           </li>
+          {/* <li>
+                        IP Address: {details.IPv4}
+                    </li> */}
         </ul>
       )}
 

@@ -91,20 +91,18 @@ function MyApp({ Component, pageProps, router }) {
         key={router.route}
         initial="pageInitial"
         animate="pageAnimate"
-        transition={{ duration: 0.7 }}
         variants={{
           pageInitial: {
             opacity: 0,
-            backgroundColor: "red",
           },
           pageAnimate: {
             opacity: 1,
           },
-          pageExit: {
-            backgroundColor: "black",
-            filter: `invert()`,
-            opacity: 0,
-          },
+          // pageExit: {
+          //   backgroundColor: "white",
+          //   filter: `invert()`,
+          //   opacity: 0,
+          // },
         }}
       >
         <Component {...pageProps} />
