@@ -5,7 +5,7 @@ import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import Rates from "../components/rates";
+import Rates from "../../components/rates";
 import Modal from "react-modal";
 // import { registerRoute } from "workbox-routing";
 // import { StaleWhileRevalidate } from "workbox-strategies";
@@ -18,15 +18,13 @@ export default function Home() {
     visible: { opacity: 1 },
     transition: { duration: 5 },
   };
-
   const router = useRouter();
-
   return (
     <div className={styles.container}>
       {currencies.map((currency) => (
         <Link
           key={currency}
-          href={`/?currencyCode=${currency}`}
+          href={`/currency/[currencyCode]?currencyCode=${currency}`}
           as={`/currency/${currency}`}
         >
           <button className={styles.btn}>{currency}</button>
@@ -73,10 +71,7 @@ export default function Home() {
       <Link href="/bgSyncTest">
         <button className={styles.btn}>bgSync</button>
       </Link>
-      <Modal
-        isOpen={!!router.query.currencyCode}
-        onRequestClose={() => router.push("/")}
-      >
+      <Modal isOpen={!!router.query.currencyCode}>
         <Rates currencyCode={router.query.currencyCode} />
       </Modal>
     </div>

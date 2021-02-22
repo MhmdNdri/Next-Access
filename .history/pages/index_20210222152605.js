@@ -26,7 +26,7 @@ export default function Home() {
       {currencies.map((currency) => (
         <Link
           key={currency}
-          href={`/?currencyCode=${currency}`}
+          href={`/currency/[currencyCode]?currencyCode=${currency}`}
           as={`/currency/${currency}`}
         >
           <button className={styles.btn}>{currency}</button>
@@ -73,10 +73,7 @@ export default function Home() {
       <Link href="/bgSyncTest">
         <button className={styles.btn}>bgSync</button>
       </Link>
-      <Modal
-        isOpen={!!router.query.currencyCode}
-        onRequestClose={() => router.push("/")}
-      >
+      <Modal isOpen={!!router.query.currencyCode}>
         <Rates currencyCode={router.query.currencyCode} />
       </Modal>
     </div>

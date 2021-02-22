@@ -5,33 +5,20 @@ import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import Rates from "../components/rates";
 import Modal from "react-modal";
 // import { registerRoute } from "workbox-routing";
 // import { StaleWhileRevalidate } from "workbox-strategies";
 // import { BroadcastUpdatePlugin } from "workbox-broadcast-update";
-Modal.setAppElement("#__next");
-const currencies = ["CAD", "USD"];
+
 export default function Home() {
+  const currencies = ["CAD"];
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
     transition: { duration: 5 },
   };
-
-  const router = useRouter();
-
   return (
     <div className={styles.container}>
-      {currencies.map((currency) => (
-        <Link
-          key={currency}
-          href={`/?currencyCode=${currency}`}
-          as={`/currency/${currency}`}
-        >
-          <button className={styles.btn}>{currency}</button>
-        </Link>
-      ))}
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -73,12 +60,14 @@ export default function Home() {
       <Link href="/bgSyncTest">
         <button className={styles.btn}>bgSync</button>
       </Link>
-      <Modal
-        isOpen={!!router.query.currencyCode}
-        onRequestClose={() => router.push("/")}
-      >
-        <Rates currencyCode={router.query.currencyCode} />
-      </Modal>
+      {currencies.map((currency) => {
+        <Link
+          href={`/currency/[currencyCode]?currencyCode=${currency}`}
+          as={`/currency/${currency}`}
+        >
+          <button className={styles.btn}>CAD</button>
+        </Link>;
+      })}
     </div>
   );
 }

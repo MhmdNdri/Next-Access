@@ -73,10 +73,7 @@ export default function Home() {
       <Link href="/bgSyncTest">
         <button className={styles.btn}>bgSync</button>
       </Link>
-      <Modal
-        isOpen={!!router.query.currencyCode}
-        onRequestClose={() => router.push("/")}
-      >
+      <Modal isOpen={!!router.query.currencyCode}>
         <Rates currencyCode={router.query.currencyCode} />
       </Modal>
     </div>
