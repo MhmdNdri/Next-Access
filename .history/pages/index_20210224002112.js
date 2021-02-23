@@ -21,7 +21,7 @@ export default function Home() {
     if (isOpen === true) {
       // location.replace();
       if (window.location.href.includes(`?modal=true`) === false) {
-        history.pushState({}, null, window.location.href + ?modal=true`);
+        history.pushState({}, null, window.location.href + `?modal=true`);
       }
     } else if (isOpen === false) {
       // location.replace(window.location.href.split(`?modal=true`)[0]);

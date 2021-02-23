@@ -15,22 +15,19 @@ import Rates from "../components/rates";
 const currencies = ["CAD", "USD"];
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
-    console.log(window.location.href + `?modal=true`);
+    console.log("hey");
     if (isOpen === true) {
-      // location.replace();
-      if (window.location.href.includes(`?modal=true`) === false) {
-        history.pushState({}, null, window.location.href + ?modal=true`);
-      }
-    } else if (isOpen === false) {
-      // location.replace(window.location.href.split(`?modal=true`)[0]);
-      history.pushState({}, null, window.location.href.split(`?modal=true`)[0]);
+      location.replace(
+        process.browser ? window.location.href + `?modal=true` : null
+      );
+    } else {
+      location.replace(
+        process.browser ? window.location.href.split(`?modal=true`)[0] : null
+      );
     }
   }, [isOpen]);
-  useEffect(() => {
-    window.location.href.includes(`?modal=true`) && setIsOpen(true);
-  }, []);
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -99,10 +96,7 @@ export default function Home() {
       <Link href="/images">
         <button className={styles.btn}>Images</button>
       </Link>
-      <Modal
-        isOpen={isOpen === true ? true : false}
-        onRequestClose={() => setIsOpen(!isOpen)}
-      >
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)}>
         <Rates currencyCode={router.query.currencyCode} />
       </Modal>
     </div>

@@ -12,9 +12,6 @@ const images = () => {
       });
   }, []);
   console.log(images);
-  const onLoadHandler = (event) => {
-    event.target.src = "Loading...";
-  };
   return (
     <div className={styles.container}>
       {images.map((data) => {
@@ -24,7 +21,6 @@ const images = () => {
               className={styles.nextImage}
               src={data.download_url}
               alt={data.author}
-              onLoad={onLoadHandler}
               layout="responsive"
               width={700}
               height={500}

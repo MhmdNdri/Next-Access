@@ -20,16 +20,14 @@ export default function Home() {
     console.log(window.location.href + `?modal=true`);
     if (isOpen === true) {
       // location.replace();
-      if (window.location.href.includes(`?modal=true`) === false) {
-        history.pushState({}, null, window.location.href + ?modal=true`);
-      }
-    } else if (isOpen === false) {
+      history.pushState({}, null, window.location.href + `?modal=true`);
+    } if else (isOpen===false) {
       // location.replace(window.location.href.split(`?modal=true`)[0]);
       history.pushState({}, null, window.location.href.split(`?modal=true`)[0]);
     }
   }, [isOpen]);
   useEffect(() => {
-    window.location.href.includes(`?modal=true`) && setIsOpen(true);
+    console.log(window.location.href);
   }, []);
   const variants = {
     hidden: { opacity: 0 },
@@ -99,10 +97,7 @@ export default function Home() {
       <Link href="/images">
         <button className={styles.btn}>Images</button>
       </Link>
-      <Modal
-        isOpen={isOpen === true ? true : false}
-        onRequestClose={() => setIsOpen(!isOpen)}
-      >
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(!isOpen)}>
         <Rates currencyCode={router.query.currencyCode} />
       </Modal>
     </div>

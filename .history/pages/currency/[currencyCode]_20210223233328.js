@@ -4,10 +4,16 @@ import Rates from "../../components/rates";
 
 function currency() {
   const router = useRouter();
-
+  const { currencyCode } = router.query;
   return (
     <div>
       <Rates currencyCode={currencyCode} />
+      <Modal
+        isOpen={!!router.query.currencyCode}
+        onRequestClose={() => router.push("/")}
+      >
+        <Rates currencyCode={router.query.currencyCode} />
+      </Modal>
     </div>
   );
 }
