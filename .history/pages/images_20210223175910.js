@@ -16,14 +16,8 @@ const images = () => {
     <div className={styles.container}>
       {images.map((data) => {
         return (
-          <div className={styles.image} key={data.id}>
+          <div key={data.id}>
             <Image
-              src={data.download_url}
-              alt={data.author}
-              layout="responsive"
-              width={700}
-              height={500}
-            />
           </div>
         );
       })}

@@ -9,10 +9,8 @@
 }
 
 .image{
-    width:60%;
-    height: 30%;
+    width:auto;
+    height: auto;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    
 }

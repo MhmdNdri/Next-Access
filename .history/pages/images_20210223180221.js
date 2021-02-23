@@ -17,13 +17,7 @@ const images = () => {
       {images.map((data) => {
         return (
           <div className={styles.image} key={data.id}>
-            <Image
-              src={data.download_url}
-              alt={data.author}
-              layout="responsive"
-              width={700}
-              height={500}
-            />
+            <Image src={data.url} alt={data.author} />
           </div>
         );
       })}

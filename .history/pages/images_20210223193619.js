@@ -20,9 +20,9 @@ const images = () => {
             <Image
               src={data.download_url}
               alt={data.author}
-              layout="responsive"
-              width={700}
+              width={500}
               height={500}
+              priority
             />
           </div>
         );

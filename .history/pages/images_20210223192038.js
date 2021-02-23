@@ -18,10 +18,9 @@ const images = () => {
         return (
           <div className={styles.image} key={data.id}>
             <Image
-              src={data.download_url}
+              src={data.download - url}
               alt={data.author}
-              layout="responsive"
-              width={700}
+              width={500}
               height={500}
             />
           </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Images.module.css";
 import axios from "axios";
-import Image from "next/image";
+import image from "next/image";
 const images = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
@@ -16,14 +16,8 @@ const images = () => {
     <div className={styles.container}>
       {images.map((data) => {
         return (
-          <div className={styles.image} key={data.id}>
-            <Image
-              src={data.download_url}
-              alt={data.author}
-              layout="responsive"
-              width={700}
-              height={500}
-            />
+          <div key={data.id}>
+            <img src={data.url} />
           </div>
         );
       })}
