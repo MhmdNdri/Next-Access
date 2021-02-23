@@ -74,9 +74,6 @@ export default function Home() {
       <Link href="/bgSyncTest">
         <button className={styles.btn}>bgSync</button>
       </Link>
-      <Link href="/images">
-        <button className={styles.btn}>Images</button>
-      </Link>
       <Modal
         isOpen={!!router.query.currencyCode}
         onRequestClose={() => router.push("/")}
