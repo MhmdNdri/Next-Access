@@ -14,7 +14,7 @@ const images = () => {
   }, []);
   console.log(images);
   const handleLoad = (event) => {
-    event.target.src = "../public/loading.gif";
+    event.target.src === "https://i.imgur.com/MSzY4fK.gif";
   };
   return (
     <div className={styles.container}>

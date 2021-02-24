@@ -6,7 +6,6 @@
   justify-content: center;
   background-image: url("../public/bg.jpg");
   align-items: center;
-  flex-wrap: wrap;
 }
 .btn {
   margin: 0 40px 0 40px;

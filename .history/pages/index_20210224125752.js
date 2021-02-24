@@ -1,8 +1,8 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { Snackbar, Button } from "@material-ui/core";
-// import { Workbox } from "workbox-window";
+import { Snackbar, Button } from "@material-ui/core";
+import { Workbox } from "workbox-window";
 import { useRouter } from "next/router";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
@@ -42,18 +42,18 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {currencies.map((currency) => (
-        // <Link
-        //   key={currency}
-        //   // href={`/?currencyCode=${currency}`}
-        //   // as={`/currency/${currency}`}
-        // >
-
-        // </Link>
-        <div key={currency}>
+        <Link
+          key={currency}
+          href={`/?currencyCode=${currency}`}
+          as={`/currency/${currency}`}
+        >
           <button onClick={() => setIsOpen(true)} className={styles.btn}>
             {currency}
           </button>
-        </div>
+        </Link>
+        // <div key={currency}>
+
+        // </div>
       ))}
       <motion.div
         whileHover={{ scale: 1.1 }}

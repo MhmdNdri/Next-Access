@@ -14,7 +14,7 @@ const images = () => {
   }, []);
   console.log(images);
   const handleLoad = (event) => {
-    event.target.src = "../public/loading.gif";
+    event.target.src("../public/spinner.png");
   };
   return (
     <div className={styles.container}>

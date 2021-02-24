@@ -1,8 +1,8 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { Snackbar, Button } from "@material-ui/core";
-// import { Workbox } from "workbox-window";
+import { Snackbar, Button } from "@material-ui/core";
+import { Workbox } from "workbox-window";
 import { useRouter } from "next/router";
 import Modal from "react-modal";
 import { motion } from "framer-motion";

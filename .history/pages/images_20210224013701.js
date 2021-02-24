@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 const images = () => {
   const [images, setImages] = useState([]);
-  const [load, setLoad] = useState([]);
+  const [images, setImages] = useState([]);
   useEffect(() => {
     axios
       .get("https://picsum.photos/v2/list?page=2&limit=10")
@@ -13,8 +13,8 @@ const images = () => {
       });
   }, []);
   console.log(images);
-  const handleLoad = (event) => {
-    event.target.src = "../public/loading.gif";
+  const onLoadHandler = (event) => {
+    event.target.src = "Loading...";
   };
   return (
     <div className={styles.container}>
@@ -25,7 +25,7 @@ const images = () => {
               className={styles.nextImage}
               src={data.download_url}
               alt={data.author}
-              onLoad={handleLoad}
+              onLoad={onLoadHandler}
               layout="responsive"
               width={700}
               height={500}
