@@ -99,6 +99,27 @@ export default function Home() {
       <Link href="/images">
         <button className={styles.btn}>Images</button>
       </Link>
+      <Link href="/swipe">
+        <button className={styles.btn}>SwipeJs</button>
+      </Link>
+      <Link href="/swiper">
+        <button className={styles.btn}>Swiper</button>
+      </Link>
+      <Link href="/swipeable">
+        <button className={styles.btn}>Swipeable</button>
+      </Link>
+      <Link href="/swipable-view">
+        <button className={styles.btn}>Swipeable-views</button>
+      </Link>
+      <Link href="/react-id-swiper ">
+        <button className={styles.btn}>React-Id-Swiper </button>
+      </Link>
+      <Link href="/react-swipe">
+        <button className={styles.btn}>React-Swipe</button>
+      </Link>
+      <Link href="/puppeteer">
+        <button className={styles.btn}>Puppeteer</button>
+      </Link>
       <Modal
         isOpen={isOpen === true ? true : false}
         onRequestClose={() => setIsOpen(!isOpen)}

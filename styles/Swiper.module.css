@@ -1,0 +1,24 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  background-image: linear-gradient(to right, #a8a4cf 0%, #8788c4  23%, #6b6cb4  55%, #484ac4  75%, #330ed4  100%);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-container {
+  width: 500px;
+}
+
+.swiper-pagination {
+  bottom: 0;
+  padding-bottom: 10px;
+}
+
+.swiper-wrapper {
+  padding-inline-start: 0;
+}
+.image{
+  list-style: "none";
+}
