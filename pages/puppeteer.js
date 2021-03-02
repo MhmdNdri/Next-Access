@@ -1,6 +1,32 @@
 import React from "react";
 import Styles from "../styles/Puppeteer.module.css";
+import { jsPDF } from "jspdf";
+// import puppeteer from "puppeteer";
+
 const Puppeteer = () => {
+  // (async () => {
+  //   const browser = await puppeteer.launch();
+  //   const page = await browser.newPage();
+  //   await page.goto("https://example.com");
+  //   await page.screenshot({ path: "example.png" });
+
+  //   await browser.close();
+  // })();
+  // const generatePDF = () => {
+  //   var doc = new jsPDF("p", "pt");
+
+  //   doc.text(20, 20, "This is the first title.");
+
+  //   doc.setFont("helvetica");
+  //   doc.setFontType("normal");
+  //   doc.text(20, 60, "This is the second title.");
+
+  //   doc.setFont("helvetica");
+  //   doc.setFontType("normal");
+  //   doc.text(20, 100, "This is the thrid title.");
+
+  //   doc.save("demo.pdf");
+  // };
   return (
     <div className={Styles.container}>
       <div className={Styles.box}>
@@ -14,6 +40,9 @@ const Puppeteer = () => {
           درصد گذشته،
         </p>
       </div>
+      {/* <button onClick={generatePDF} className={Styles.btn}>
+        Download PDF{" "}
+      </button> */}
     </div>
   );
 };

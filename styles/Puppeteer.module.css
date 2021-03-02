@@ -5,6 +5,7 @@
     background-image: linear-gradient(to right, #a8a4cf 0%, #8788c4  23%, #6b6cb4  55%, #484ac4  75%, #330ed4  100%);
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 .box{
@@ -37,4 +38,19 @@
    padding: 20px;
    text-align: right;
    color: whitesmoke;
+}
+.btn{
+    cursor: pointer;
+    width: 120px;
+    height: 50px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color:aliceblue;
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
+    box-shadow: 0px 0px 25px 10px rgba(168, 168, 168, 0.6);
+    background-image: linear-gradient(to right, #d3dadbfb 0%, #999999  51%, #707070  100%);
 }

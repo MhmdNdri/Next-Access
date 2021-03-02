@@ -120,6 +120,12 @@ export default function Home() {
       <Link href="/puppeteer">
         <button className={styles.btn}>Puppeteer</button>
       </Link>
+      <Link href="/react-hook-form">
+        <button className={styles.btn}>React-hook-form</button>
+      </Link>
+      <Link href="/formik">
+        <button className={styles.btn}>Formik</button>
+      </Link>
       <Modal
         isOpen={isOpen === true ? true : false}
         onRequestClose={() => setIsOpen(!isOpen)}
