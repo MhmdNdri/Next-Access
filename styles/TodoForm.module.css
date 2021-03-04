@@ -1,0 +1,35 @@
+.cont {
+    padding: 10px;
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid #bbff00;
+    background-color: transparent;
+    margin-right: 20px;
+    outline: none;
+    min-height: 25px;
+    color: whitesmoke;
+}
+.input::placeholder{
+    color: rgb(255, 255, 255)23, 216, 204);
+}
+.btnUpdate {
+    background-color: yellow;
+    min-width: 40px;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btnAdd {
+    min-width: 40px;
+    min-height: 30px;
+    background-color: rgba(110, 110, 8, 0.911);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: wheat;
+    font-family: Arial, Helvetica, sans-serif;
+}

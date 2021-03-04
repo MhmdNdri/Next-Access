@@ -8,6 +8,11 @@ import Modal from "react-modal";
 import { motion } from "framer-motion";
 import Rates from "../components/rates";
 
+// import dynamic from "next/dynamic";
+
+// const DynamicComponentWithNoSSR = dynamic(() => import("../pages/puppeteer"), {
+//   ssr: false,
+// });
 // import { registerRoute } from "workbox-routing";
 // import { StaleWhileRevalidate } from "workbox-strategies";
 // import { BroadcastUpdatePlugin } from "workbox-broadcast-update";
@@ -41,6 +46,7 @@ export default function Home() {
   const { currencyCode } = router.query;
   return (
     <div className={styles.container}>
+      {/* <DynamicComponentWithNoSSR /> */}
       {currencies.map((currency) => (
         // <Link
         //   key={currency}
@@ -125,6 +131,9 @@ export default function Home() {
       </Link>
       <Link href="/formik">
         <button className={styles.btn}>Formik</button>
+      </Link>
+      <Link href="/todo">
+        <button className={styles.btn}>TodoList</button>
       </Link>
       <Modal
         isOpen={isOpen === true ? true : false}

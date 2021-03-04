@@ -1,0 +1,31 @@
+.cont {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content:space-around;
+    color: whitesmoke;
+}
+
+.btnDelete {
+    background-color: rgb(255, 0, 0);
+    min-width: 40px;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+.btnEdit{
+    background-color: rgb(255, 166, 0);
+    min-width: 40px;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+.btns{
+    align-items: flex-end;
+}
