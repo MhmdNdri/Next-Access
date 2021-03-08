@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: linear-gradient(to right, rgb(223, 68, 143) 50%, #ac2066 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper {
+  background-color: #351123;
+  width: 25%;
+  min-width: 450px;
+  height: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  color: #ccc;
+  font-weight: 300;
+  text-align: center;
+  margin: 50px 20px 60px 20px;
+  font-family: 'Josefin Slab', serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.list {
+  width: 90%;
+  margin: auto;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #aaa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.task-input {
+  width: 200px;
+  min-width: 250px;
+  padding: 15px 10px 10px 20px;
+  margin-right: 10px;
+  font-family: 'Josefin Sans', serif;
+  font-size: 20px;
+  color: rgb(245, 147, 147);
+  background-color:transparent;
+  border: none;
+  border-bottom: 1px solid rgb(208, 255, 0);;
+  outline: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.task-input::placeholder{
+  text-align: center;
+  color: rgba(250, 235, 215, 0.733);
+  
+}
+.buttons {
+  display: flex;
+}
+
+.btn {
+  margin: 10px;
+}
+
+ .add-task-btn {
+  min-width: 100px;
+  min-height: 30px;
+  background-color: #d8d8d8;
+  color: rgb(10, 9, 9);
+  border: none;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  cursor: pointer;
+} 
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.list-item span {
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.task-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  margin-right: 20px;
+}
+
+.btn-delete i {
+  font-size: 16px;
+  color: #bbb;
+  margin-right: 20px;
+}
+
+.btn-edit i {
+  font-size: 16px;
+  color: #bbb;
+  margin-right: 20px;
+}
+
+.clear-btn {
+  min-width: 100px;
+  min-height: 30px;
+  background-color: #d8d8d8;
+  color: rgb(10, 9, 9);
+  border: none;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  cursor: pointer;
+}
+
+.no-tasks {
+  color: rgb(60, 255, 0);
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

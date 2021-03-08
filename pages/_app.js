@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
 import "swiper/swiper-bundle.css";
+import "../styles/TodoContext.css";
 
 function MyApp({ Component, pageProps, router }) {
   // useEffect(() => {

@@ -135,6 +135,9 @@ export default function Home() {
       <Link href="/todo">
         <button className={styles.btn}>TodoList</button>
       </Link>
+      <Link href="/todo-context">
+        <button className={styles.btn}>TodoList With Context</button>
+      </Link>
       <Modal
         isOpen={isOpen === true ? true : false}
         onRequestClose={() => setIsOpen(!isOpen)}
