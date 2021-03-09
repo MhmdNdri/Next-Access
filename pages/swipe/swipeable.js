@@ -1,6 +1,6 @@
 import React from "react";
 import { useSwipeable } from "react-swipeable";
-import Styles from "../styles/Swipe.module.css";
+import Styles from "../../styles/Swipe.module.css";
 const swipeable = () => {
   const handlers = useSwipeable({
     onSwiped: (eventData) => console.log("User Swiped!", eventData),

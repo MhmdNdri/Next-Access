@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import styles from "../styles/Location.module.css";
+import styles from "../../styles/Location.module.css";
 import { motion } from "framer-motion";
 import fetch from "node-fetch";
 

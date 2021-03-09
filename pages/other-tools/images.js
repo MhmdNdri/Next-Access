@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/Images.module.css";
+import styles from "../../styles/Images.module.css";
 import axios from "axios";
 import Image from "next/image";
-import Spinner from "../components/spinner";
+import Spinner from "../../components/spinner";
 const images = () => {
   const [images, setImages] = useState([]);
   const [loaded, setLoaded] = useState(null);

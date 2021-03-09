@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../styles/Form.module.css";
+import Styles from "../../styles/Form.module.css";
 import { useFormik } from "formik";
 
 const validate = (values) => {
@@ -7,12 +7,12 @@ const validate = (values) => {
   if (!values.firstName) {
     errors.firstName = "It's Empty ";
   } else if (values.firstName.length > 15) {
-    errors.firstName = "It must be more than 15 characters";
+    errors.firstName = "It must be Less than 15 characters";
   }
   if (!values.lastName) {
     errors.lastName = "It's Empty ";
   } else if (values.lastName.length > 20) {
-    errors.lastName = "It must be more than 15 characters";
+    errors.lastName = "It must be Less than 15 characters";
   }
   if (!values.email) {
     errors.email = "It's Empty ";

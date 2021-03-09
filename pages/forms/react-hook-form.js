@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Styles from "../styles/Form.module.css";
+import Styles from "../../styles/Form.module.css";
 const reactHookForm = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {

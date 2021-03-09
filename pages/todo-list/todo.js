@@ -1,7 +1,7 @@
 import React from "react";
-import Todo from "../components/Todo";
-import TodoList from "../components/TodoList";
-import styles from "../styles/HomeTodo.module.css";
+import Todo from "../../components/Todo";
+import TodoList from "../../components/TodoList";
+import styles from "../../styles/HomeTodo.module.css";
 
 const todo = () => {
   return (

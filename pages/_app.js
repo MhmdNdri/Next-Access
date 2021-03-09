@@ -10,24 +10,6 @@ import "swiper/swiper-bundle.css";
 import "../styles/TodoContext.css";
 
 function MyApp({ Component, pageProps, router }) {
-  // useEffect(() => {
-  //   if ("serviceWorker" in navigator && "SyncManager" in window) {
-  //     navigator.serviceWorker.getRegistrations().then(function (registrations) {
-  //       for (let registration of registrations) {
-  //         registration.unregister();
-  //       }
-  //       navigator.serviceWorker
-  //         .register("./service-worker.js")
-  //         .then((registration) => {
-  //           navigator.serviceWorker.ready;
-  //           console.log("Hi");
-  //         })
-  //         .catch((err) => {
-  //           console.log(`ServiceWorker registration failed: ${err}`);
-  //         });
-  //     });
-  //   }
-  // });
   return (
     <>
       <Head>

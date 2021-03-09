@@ -1,72 +1,82 @@
-
-import React from 'react';
-import styles from "../styles/Mic.module.css"
-import MicRecorder from 'mic-recorder-to-mp3';
+import React from "react";
+import styles from "../../styles/Mic.module.css";
+import MicRecorder from "mic-recorder-to-mp3";
 
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 export default class Mic extends React.Component {
+  state = {
+    isRecording: false,
+    blobURL: "",
+    isBlocked: false,
+  };
 
-    state = {
-        isRecording: false,
-        blobURL: '',
-        isBlocked: false,
-    };
-
-    start = () => {
-        if (this.state.isBlocked) {
-            console.log('Permission Denied');
-        } else {
-            Mp3Recorder
-                .start()
-                .then(() => {
-                    this.setState({ isRecording: true });
-                }).catch((e) => console.error(e));
-        }
-    };
-
-    stop = () => {
-        Mp3Recorder
-            .stop()
-            .getMp3()
-            .then(([buffer, blob]) => {
-                const blobURL = URL.createObjectURL(blob)
-                this.setState({ blobURL, isRecording: false });
-            }).catch((e) => console.log(e));
-    };
-
-    componentDidMount() {
-        navigator.getUserMedia({ audio: true },
-            () => {
-                this.setState({ isBlocked: false });
-            },
-            () => {
-                this.setState({ isBlocked: true })
-            },
-        );
+  start = () => {
+    if (this.state.isBlocked) {
+      console.log("Permission Denied");
+    } else {
+      Mp3Recorder.start()
+        .then(() => {
+          this.setState({ isRecording: true });
+        })
+        .catch((e) => console.error(e));
     }
+  };
 
-    render() {
-        return (
-            <div className={styles.container}>
-                <div className="App">
-                    <header className={styles.micContainer}>
-                        <audio className={styles.audio} src={this.state.blobURL} controls="controls" />
-                    </header>
-                    <div className={styles.btnContainer}>
-                        <button className={styles.btn} onClick={this.start} disabled={this.state.isRecording}>Record</button>
-                        <button className={styles.btn} onClick={this.stop} disabled={!this.state.isRecording}>Stop</button>
-                    </div>
-                </div>
-            </div>
+  stop = () => {
+    Mp3Recorder.stop()
+      .getMp3()
+      .then(([buffer, blob]) => {
+        const blobURL = URL.createObjectURL(blob);
+        this.setState({ blobURL, isRecording: false });
+      })
+      .catch((e) => console.log(e));
+  };
 
-        );
-    }
+  componentDidMount() {
+    navigator.getUserMedia(
+      { audio: true },
+      () => {
+        this.setState({ isBlocked: false });
+      },
+      () => {
+        this.setState({ isBlocked: true });
+      }
+    );
+  }
+
+  render() {
+    return (
+      <div className={styles.container}>
+        <div className="App">
+          <header className={styles.micContainer}>
+            <audio
+              className={styles.audio}
+              src={this.state.blobURL}
+              controls="controls"
+            />
+          </header>
+          <div className={styles.btnContainer}>
+            <button
+              className={styles.btn}
+              onClick={this.start}
+              disabled={this.state.isRecording}
+            >
+              Record
+            </button>
+            <button
+              className={styles.btn}
+              onClick={this.stop}
+              disabled={!this.state.isRecording}
+            >
+              Stop
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-
-
-
 
 // import React, { useState, useEffect, Component } from 'react'
 // import { ReactMic } from 'react-mic';
@@ -105,57 +115,6 @@ export default class Mic extends React.Component {
 //     )
 // }
 // export default Mic
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import MicRecorder from 'mic-recorder-to-mp3';
 // import Recorder from 'react-mp3-recorder'
@@ -204,7 +163,6 @@ export default class Mic extends React.Component {
 //                 }).catch((e) => console.log(e));
 //         }
 
-
 //         return (
 //             <div>
 //                 <button onClick={startRecorder} disabled={recording}>Start</button>
@@ -215,9 +173,6 @@ export default class Mic extends React.Component {
 //     }
 
 //     export default Mic
-
-
-
 
 // export default class Mic extends Component {
 //     render() {
@@ -237,7 +192,6 @@ export default class Mic extends React.Component {
 //         console.log('recording error', err)
 //     }
 // }
-
 
 // export class Example extends React.Component {
 //     constructor(props) {

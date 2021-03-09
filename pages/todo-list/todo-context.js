@@ -1,6 +1,6 @@
-import TaskListContextProvider from "../contexts/TaskListContext";
-import TaskList from "../components/TaskList";
-import TaskForm from "../components/TaskForm";
+import TaskListContextProvider from "../../contexts/TaskListContext";
+import TaskList from "../../components/TaskList";
+import TaskForm from "../../components/TaskForm";
 
 const TodoContext = () => {
   return (

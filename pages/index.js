@@ -3,147 +3,30 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 // import { Snackbar, Button } from "@material-ui/core";
 // import { Workbox } from "workbox-window";
-import { useRouter } from "next/router";
-import Modal from "react-modal";
-import { motion } from "framer-motion";
-import Rates from "../components/rates";
-
-// import dynamic from "next/dynamic";
-
-// const DynamicComponentWithNoSSR = dynamic(() => import("../pages/puppeteer"), {
-//   ssr: false,
-// });
-// import { registerRoute } from "workbox-routing";
-// import { StaleWhileRevalidate } from "workbox-strategies";
-// import { BroadcastUpdatePlugin } from "workbox-broadcast-update";
-
-const currencies = ["CAD", "USD"];
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(null);
-  useEffect(() => {
-    console.log(window.location.href + `?modal=true`);
-    if (isOpen === true) {
-      // location.replace();
-      if (window.location.href.includes(`?modal=true`) === false) {
-        history.pushState({}, null, window.location.href + `?modal=true`);
-      }
-    } else if (isOpen === false) {
-      // location.replace(window.location.href.split(`?modal=true`)[0]);
-      history.pushState({}, null, window.location.href.split(`?modal=true`)[0]);
-    }
-  }, [isOpen]);
-  useEffect(() => {
-    window.location.href.includes(`?modal=true`) && setIsOpen(true);
-  }, []);
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    transition: { duration: 5 },
-  };
-
-  const router = useRouter();
-  const { currencyCode } = router.query;
   return (
     <div className={styles.container}>
-      {/* <DynamicComponentWithNoSSR /> */}
-      {currencies.map((currency) => (
-        // <Link
-        //   key={currency}
-        //   // href={`/?currencyCode=${currency}`}
-        //   // as={`/currency/${currency}`}
-        // >
+      <Link href="/modals">
+        <button className={styles.btn}>Modals</button>
+      </Link>
+      <Link href="/forms">
+        <button className={styles.btn}>Forms</button>
+      </Link>
+      <Link href="/what-web-can-do">
+        <button className={styles.btn}>What Web Can Do?</button>
+      </Link>
 
-        // </Link>
-        <div key={currency}>
-          <button onClick={() => setIsOpen(true)} className={styles.btn}>
-            {currency}
-          </button>
-        </div>
-      ))}
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-      >
-        <Link href="/location">
-          <button className={styles.btn}>Your Location</button>
-        </Link>
-      </motion.div>
-      <Link href="/camera">
-        <button className={styles.btn}>Your Camera</button>
-      </Link>
-      <Link href="/mic">
-        <button className={styles.btn}>Your Microphone</button>
-      </Link>
-      <Link href="/totext">
-        <button className={styles.btn}>Speech to Text</button>
-      </Link>
-      <Link href="/bluetooth">
-        <button className={styles.btn}>Bluetooth</button>
-      </Link>
-      <Link href="/share">
-        <button className={styles.btn}>Share</button>
-      </Link>
-      <Link href="/notification">
-        <button className={styles.btn}>Notification</button>
-      </Link>
-      <Link href="/clipboard">
-        <button className={styles.btn}>ClipBoard</button>
-      </Link>
-      <Link href="/vibration">
-        <button className={styles.btn}>Vibration</button>
-      </Link>
-      <Link href="/battery">
-        <button className={styles.btn}>Battery</button>
-      </Link>
-      <Link href="/bgSyncTest">
-        <button className={styles.btn}>bgSync</button>
-      </Link>
-      <Link href="/images">
-        <button className={styles.btn}>Images</button>
-      </Link>
       <Link href="/swipe">
-        <button className={styles.btn}>SwipeJs</button>
+        <button className={styles.btn}>Swipe</button>
       </Link>
-      <Link href="/swiper">
-        <button className={styles.btn}>Swiper</button>
-      </Link>
-      <Link href="/swipeable">
-        <button className={styles.btn}>Swipeable</button>
-      </Link>
-      <Link href="/swipable-view">
-        <button className={styles.btn}>Swipeable-views</button>
-      </Link>
-      <Link href="/react-id-swiper ">
-        <button className={styles.btn}>React-Id-Swiper </button>
-      </Link>
-      <Link href="/react-swipe">
-        <button className={styles.btn}>React-Swipe</button>
-      </Link>
-      <Link href="/puppeteer">
-        <button className={styles.btn}>Puppeteer</button>
-      </Link>
-      <Link href="/react-hook-form">
-        <button className={styles.btn}>React-hook-form</button>
-      </Link>
-      <Link href="/formik">
-        <button className={styles.btn}>Formik</button>
-      </Link>
-      <Link href="/todo">
+
+      <Link href="/todo-list">
         <button className={styles.btn}>TodoList</button>
       </Link>
-      <Link href="/todo-context">
-        <button className={styles.btn}>TodoList With Context</button>
+      <Link href="/other-tools">
+        <button className={styles.btn}>Others</button>
       </Link>
-      <Modal
-        isOpen={isOpen === true ? true : false}
-        onRequestClose={() => setIsOpen(!isOpen)}
-      >
-        <Rates currencyCode={router.query.currencyCode} />
-      </Modal>
     </div>
   );
 }

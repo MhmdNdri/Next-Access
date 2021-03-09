@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Styles from "../styles/Swiper.module.css";
+import Styles from "../../styles/Swiper.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 

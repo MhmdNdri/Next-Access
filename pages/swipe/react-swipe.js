@@ -1,6 +1,6 @@
 import React from "react";
 import ReactSwipe from "react-swipe";
-import Styles from "../styles/Swipe.module.css";
+import Styles from "../../styles/Swipe.module.css";
 const reactSwipe = () => {
   let reactSwipeEl;
   return (

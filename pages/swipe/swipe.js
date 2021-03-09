@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Styles from "../styles/Swipe.module.css";
+import Styles from "../../styles/Swipe.module.css";
 import Swipeable from "react-swipeable";
 const swipe = () => {
   const [firstXdirection, setFirstXdirections] = useState(0);

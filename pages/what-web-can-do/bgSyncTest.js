@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/BgSync.module.css";
+import styles from "../../styles/BgSync.module.css";
 import axios from "axios";
 
 const BgSync = () => {

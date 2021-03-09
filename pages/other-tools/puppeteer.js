@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../styles/Puppeteer.module.css";
+import Styles from "../../styles/Puppeteer.module.css";
 import { jsPDF } from "jspdf";
 // import puppeteer from "puppeteer";
 
@@ -49,6 +49,7 @@ const Puppeteer = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Puppeteer), {
-  ssr: false,
-});
+export default Puppeteer;
+// export default dynamic(() => Promise.resolve(Puppeteer), {
+//   ssr: false,
+// });
