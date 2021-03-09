@@ -1,0 +1,59 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url("../public/bg.jpg");
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    margin: 0 40px 0 40px;
+    background-image: linear-gradient(to right, #41463e 0%, #878877  51%, #d3c8c3  100%);
+    cursor: pointer;
+    width: 180px;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: 0.6s;
+    box-shadow: 0px 0px 25px 10px rgba(173, 163, 163, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn:hover{
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.2);
+  }
+  .btnText{
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 28px;
+      margin-top: 3px;
+      
+      background-image: linear-gradient(to bottom, #858585 0%, #cecece  51%, #f5e9e9  100%);
+      text-shadow: 0px 2px 10px rgb(255, 255, 255);
+      background-clip: text;
+      color: transparent;
+      transition: 0.6;
+  }
+  .btnText:hover{
+    background-image: linear-gradient(to bottom, #bbff00 0%, #a7c404  51%, #1ba500  100%);
+    text-shadow: 0px 5px 10px rgb(102, 255, 0);
+    background-clip: text;
+    color: transparent;
+    transform: scaleX(1.2)
+  }
+  
+  @media only screen and (max-width: 668px) {
+    div.container{
+      flex-direction: column;
+    }
+    button.btn{
+      margin: 20px 0px 20px 0px;
+    }
+  }
