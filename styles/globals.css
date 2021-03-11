@@ -47,6 +47,11 @@
        url('/public/fonts/shabnam/Shabnam-Medium.ttf') format('truetype');
   font-weight: 500;
 }
+@font-face {
+  font-family: Tyara;
+  src: url('/public/fonts/AkayaTelivigala-Regular.ttf');
+  font-weight: 500;
+}
 html,
 body {
   padding: 0;

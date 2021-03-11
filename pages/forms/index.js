@@ -11,6 +11,9 @@ const forms = () => {
       <Link href="/forms/formik">
         <button className={styles.btn}>Formik</button>
       </Link>
+      <Link href="/forms/form-otp">
+        <button className={styles.btn}>Form For OTP</button>
+      </Link>
     </div>
   );
 };

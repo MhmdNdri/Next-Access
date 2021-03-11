@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
+import "aos/dist/aos.css";
 import "swiper/swiper-bundle.css";
 import "../styles/TodoContext.css";
 
