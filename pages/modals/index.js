@@ -27,7 +27,7 @@ const modals = () => {
   }, []);
 
   const router = useRouter();
-  const { currencyCode } = router.query;
+  // const { currencyCode } = router.query;
   return (
     <div className={styles.container}>
       {currencies.map((currency) => (
