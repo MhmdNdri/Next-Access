@@ -24,7 +24,7 @@ export default function Home() {
           <span className={styles.btnText}>?</span>
         </button>
       </Link>
-      <Link href="/modals">
+      {/* <Link href="/modals">
         <button
           data-aos="fade-up"
           data-aos-duration="3000"
@@ -37,7 +37,7 @@ export default function Home() {
           <span className={styles.btnText}>L</span>
           <span className={styles.btnText}>S</span>
         </button>
-      </Link>
+      </Link> */}
       <Link href="/forms">
         <button data-aos="zoom-in" className={styles.btn}>
           <span className={styles.btnText}>F</span>
