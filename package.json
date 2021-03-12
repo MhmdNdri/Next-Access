@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-on-netlify"    
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -22,6 +23,7 @@
     "mic-recorder-to-mp3": "^2.2.2",
     "next": "10.0.5",
     "next-offline": "^5.0.3",
+    "next-on-netlify": "^2.9.0",
     "next-pwa": "^5.0.4",
     "next-use-contextual-routing": "^2.0.0",
     "puppeteer": "^8.0.0",
