@@ -3,7 +3,7 @@ import styles from "../../styles/Otp.module.css";
 import axios from "axios";
 import Link from "next/link";
 const validate = () => {
-  const [validation, setValidationNumber] = useState("");
+  const [validation, setValidationNumber] = useState(null);
   const inputRef = useRef();
 
   console.log(inputRef.current);
