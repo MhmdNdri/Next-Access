@@ -26,7 +26,7 @@ const validate = () => {
           <input
             className={styles.input}
             type="text"
-            autocomplete="one-time-code"
+            autoComplete="one-time-code"
             inputMode="numeric"
             name="one-time-code"
             value={validation}
