@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const formOTP = () => {
   const [phoneNumber, setPhoneNumber] = useState(null);
-  console.log(formRef);
 
   const handlePostReq = () => {
     axios.post(
@@ -44,7 +43,7 @@ const formOTP = () => {
   // }, []);
   return (
     <div className={styles.container}>
-      <form ref={formRef} className={styles.form}>
+      <form className={styles.form}>
         <p className={styles.p}>Please enter your Phone Number</p>
         <input
           className={styles.input}
