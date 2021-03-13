@@ -4,16 +4,19 @@ import axios from "axios";
 import Link from "next/link";
 const validate = () => {
   const [validation, setValidationNumber] = useState(null);
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   console.log(inputRef.current);
   useEffect(() => {
     if ("OTPCredential" in window) {
-      navigator.credentials
-        .get({
-          otp: { transport: ["sms"] },
-        })
-        .then((otp) => setValidationNumber(otp.code));
+      const input = inputRef.current;
+      if (input) {
+        navigator.credentials
+          .get({
+            otp: { transport: ["sms"] },
+          })
+          .then((otp) => (input.value = otp.code));
+      }
     }
   });
   return (
@@ -28,6 +31,7 @@ const validate = () => {
             autoComplete="one-time-code"
             inputMode="numeric"
             value={validation}
+            onChange={(e) => setValidationNumber(e.target.value)}
             required
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../../styles/Otp.module.css";
 import axios from "axios";
 import Link from "next/link";
 
 const formOTP = () => {
   const [phoneNumber, setPhoneNumber] = useState(null);
+  console.log(formRef);
 
   const handlePostReq = () => {
     axios.post(
@@ -43,8 +44,7 @@ const formOTP = () => {
   // }, []);
   return (
     <div className={styles.container}>
-      <div></div>
-      <form className={styles.form}>
+      <form ref={formRef} className={styles.form}>
         <p className={styles.p}>Please enter your Phone Number</p>
         <input
           className={styles.input}
