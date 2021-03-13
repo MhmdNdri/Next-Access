@@ -9,13 +9,11 @@ const validate = () => {
       const input = document.querySelector(
         'input[autoComplete="one-time-code"]'
       );
-      if (input) {
-        navigator.credentials
-          .get({
-            otp: { transport: ["sms"] },
-          })
-          .then((otp) => (input.value = otp.code));
-      }
+      navigator.credentials
+        .get({
+          otp: { transport: ["sms"] },
+        })
+        .then((otp) => (input.value = otp.code));
     }
   });
   return (
@@ -24,6 +22,7 @@ const validate = () => {
         <p className={styles.p}>Enter the number that you get from SMS</p>
         <form className={styles.form} action="/verify-otp" method="post">
           <input
+            className={styles.input}
             type="text"
             autoComplete="one-time-code"
             inputMode="numeric"
