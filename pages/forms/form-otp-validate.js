@@ -43,6 +43,7 @@ const validate = () => {
             separator={<span>-</span>}
             autoComplete="one-time-code"
             shouldAutoFocus={true}
+            focusStyle="true"
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />
         </form>
