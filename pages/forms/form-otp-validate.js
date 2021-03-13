@@ -5,6 +5,7 @@ import Link from "next/link";
 const validate = () => {
   const [validation, setValidationNumber] = useState(null);
   const inputRef = useRef(null);
+  console.log(inputRef);
   useEffect(() => {
     if ("OTPCredential" in window) {
       const input = document.querySelector(
@@ -15,7 +16,7 @@ const validate = () => {
           .get({
             otp: { transport: ["sms"] },
           })
-          .then((otp) => (inputRef.value = otp.code));
+          .then((otp) => setValidationNumber(otp.code));
       }
     }
   });
