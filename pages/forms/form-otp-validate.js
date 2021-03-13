@@ -28,7 +28,6 @@ const validate = () => {
             type="text"
             autoComplete="one-time-code"
             inputMode="numeric"
-            name="one-time-code"
             value={validation}
             onChange={(e) => setValidationNumber(e.target.value)}
             pattern="\d{4}"
