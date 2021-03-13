@@ -3,21 +3,17 @@ import styles from "../../styles/Otp.module.css";
 import axios from "axios";
 import Link from "next/link";
 const validate = () => {
-  const [validation, setValidationNumber] = useState(null);
-  const inputRef = useRef(null);
-  console.log(inputRef);
+  const [validation, setValidationNumber] = useState("");
+  const inputRef = useRef();
+
+  console.log(inputRef.current);
   useEffect(() => {
     if ("OTPCredential" in window) {
-      const input = document.querySelector(
-        'input[autoComplete="one-time-code"]'
-      );
-      if (inputRef) {
-        navigator.credentials
-          .get({
-            otp: { transport: ["sms"] },
-          })
-          .then((otp) => setValidationNumber(otp.code));
-      }
+      navigator.credentials
+        .get({
+          otp: { transport: ["sms"] },
+        })
+        .then((otp) => setValidationNumber(otp.code));
     }
   });
   return (
