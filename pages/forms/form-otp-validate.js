@@ -7,7 +7,7 @@ const validate = () => {
   useEffect(() => {
     if ("OTPCredential" in window) {
       const input = document.querySelector(
-        'input[autocomplete="one-time-code"]'
+        'input[autoComplete="one-time-code"]'
       );
       if (input) {
         navigator.credentials
@@ -24,12 +24,12 @@ const validate = () => {
         <p className={styles.p}>Enter the number that you get from SMS</p>
         <form className={styles.form} action="/verify-otp" method="post">
           <input
-            className={styles.input}
             type="text"
-            autocomplete="one-time-code"
+            autoComplete="one-time-code"
             inputMode="numeric"
             value={validation}
             onChange={(e) => setValidationNumber(e.target.value)}
+            required
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />
         </form>
