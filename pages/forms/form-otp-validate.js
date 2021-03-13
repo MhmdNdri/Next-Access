@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../../styles/Otp.module.css";
 import axios from "axios";
 import Link from "next/link";
 const validate = () => {
   const [validation, setValidationNumber] = useState(null);
+  const inputRef = useRef(null);
   useEffect(() => {
     if ("OTPCredential" in window) {
       const input = document.querySelector(
         'input[autoComplete="one-time-code"]'
       );
-      if (input) {
-        console.log(input.value, navigator.credentials);
+      if (inputRef) {
         navigator.credentials
           .get({
             otp: { transport: ["sms"] },
           })
-          .then((otp) => setValidationNumber(otp.code));
+          .then((otp) => (inputRef.value = otp.code));
       }
     }
   });
@@ -25,6 +25,7 @@ const validate = () => {
         <p className={styles.p}>Enter the number that you get from SMS</p>
         <form className={styles.form} action="/verify-otp" method="post">
           <input
+            ref={inputRef}
             className={styles.input}
             type="text"
             autoComplete="one-time-code"
