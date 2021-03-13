@@ -22,14 +22,14 @@ const validate = () => {
     <div>
       <div className={styles.container}>
         <p className={styles.p}>Enter the number that you get from SMS</p>
-        <form className={styles.form}>
+        <form className={styles.form} action="/verify-otp" method="post">
           <input
             className={styles.input}
             type="text"
             autocomplete="one-time-code"
             inputMode="numeric"
-            pattern="\d{4}"
-            required
+            value={validation}
+            onChange={(e) => setValidationNumber(e.target.value)}
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />
         </form>
