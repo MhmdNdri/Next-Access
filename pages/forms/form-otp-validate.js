@@ -8,7 +8,7 @@ const validate = () => {
   useEffect(() => {
     if ("OTPCredential" in window) {
       const input = document.querySelector(
-        'input[autoComplete="one-time-code]'
+        'input[autoComplete="one-time-code"]'
       );
       if (input) {
         navigator.credentials
