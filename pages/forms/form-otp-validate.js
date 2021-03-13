@@ -2,18 +2,20 @@ import React, { useState, useEffect } from "react";
 import styles from "../../styles/Otp.module.css";
 import axios from "axios";
 import Link from "next/link";
-implementation 'com.google.android.gms:play-services-auth:17.0.0';
-implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
 
 const validate = () => {
   const [validation, setValidationNumber] = useState(null);
   useEffect(() => {
-    if ("OTPCredential" in window){
-      const input = document.querySelector('input[autoComplete="one-time-code]');
+    if ("OTPCredential" in window) {
+      const input = document.querySelector(
+        'input[autoComplete="one-time-code]'
+      );
       if (input) {
-        navigator.credentials.get({
-          otp:{transport:['sms']}
-        }).then(otp=>input.value = otp.code)
+        navigator.credentials
+          .get({
+            otp: { transport: ["sms"] },
+          })
+          .then((otp) => (input.value = otp.code));
       }
     }
   });
