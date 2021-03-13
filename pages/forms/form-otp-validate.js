@@ -8,16 +8,21 @@ const validate = () => {
 
   console.log(inputRef.current);
   useEffect(() => {
-    if ("OTPCredential" in window) {
-      const input = inputRef.current;
-      if (input) {
-        navigator.credentials
-          .get({
-            otp: { transport: ["sms"] },
-          })
-          .then((otp) => (input.value = otp.code));
-      }
-    }
+    // if ("OTPCredential" in window) {
+    //   const input = inputRef.current;
+    //   if (input) {
+    //     navigator.credentials
+    //       .get({
+    //         otp: { transport: ["sms"] },
+    //       })
+    //       .then((otp) => (input.value = otp.code));
+    //   }
+    // }
+    navigator.credentials
+      .get({
+        otp: { transport: ["sms"] },
+      })
+      .then((otp) => (input.value = otp.code));
   });
   return (
     <div>
