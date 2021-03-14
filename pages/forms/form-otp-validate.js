@@ -16,13 +16,16 @@ const validate = () => {
     // //       .then((otp) => (input.value = otp.code));
     // //   }
     // // }
-    navigator.credentials
-      .get({
-        otp: { transport: ["sms"] },
-      })
-      .then((otp) => {
-        console.log(otp);
-      });
+    (async function loadSms() {
+      await navigator.credentials
+        .get({
+          otp: { transport: ["sms"] },
+        })
+        .then((otp) => {
+          console.log(otp);
+        });
+    })();
+
     // if ("OTPCredential" in window) {
     //   window.addEventListener("DOMContentLoaded", (e) => {
     //     const input = document.querySelector(
