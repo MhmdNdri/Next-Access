@@ -55,7 +55,7 @@ const validate = () => {
     //   });
     // }
   });
-  console.log(value);
+  console.log(validation);
   return (
     <div>
       <div className={styles.container}>
