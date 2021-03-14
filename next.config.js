@@ -1,10 +1,10 @@
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 
-module.exports = {
-  // Target must be serverless
-  target: "serverless",
-};
+// module.exports = {
+//   // Target must be serverless
+//   target: "serverless",
+// };
 
 module.exports = withPWA(
   {
