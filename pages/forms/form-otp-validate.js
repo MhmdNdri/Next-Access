@@ -56,11 +56,13 @@ const validate = () => {
     //       });
     //   });
     // }
-    navigator.credentials
-      .get({
-        otp: { transport: ["sms"] },
-      })
-      .then((otp) => console.log(otp), setValidationNumber(otp.code));
+    if ("OTPCredential" in window) {
+      navigator.credentials
+        .get({
+          otp: { transport: ["sms"] },
+        })
+        .then((otp) => console.log(otp), setValidationNumber(otp.code));
+    }
   });
   console.log(validation);
   return (
