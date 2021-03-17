@@ -60,7 +60,7 @@ const validate = () => {
       .get({
         otp: { transport: ["sms"] },
       })
-      .then((otp) => setValidationNumber(otp.code));
+      .then((otp) => console.log(otp), setValidationNumber(otp.code));
   });
   console.log(validation);
   return (
@@ -75,9 +75,7 @@ const validate = () => {
             autoComplete="one-time-code"
             inputMode="numeric"
             value={validation}
-            onChange={
-              ((e) => console.log(otp), setValidationNumber(e.target.value))
-            }
+            onChange={(e) => setValidationNumber(e.target.value)}
             required
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />
