@@ -6,26 +6,25 @@ const validate = () => {
   const [validation, setValidationNumber] = useState(null);
   const inputRef = useRef(null);
   useEffect(() => {
-    // // if ("OTPCredential" in window) {
-    // //   const input = inputRef.current;
-    // //   if (input) {
-    // //     navigator.credentials
-    // //       .get({
-    // //         otp: { transport: ["sms"] },
-    // //       })
-    // //       .then((otp) => (input.value = otp.code));
-    // //   }
-    // // }
-    (async function loadSms() {
-      await navigator.credentials
-        .get({
-          otp: { transport: ["sms"] },
-        })
-        .then((otp) => {
-          console.log(otp);
-        });
-    })();
-
+    // if ("OTPCredential" in window) {
+    //   const input = inputRef.current;
+    //   if (input) {
+    //     navigator.credentials
+    //       .get({
+    //         otp: { transport: ["sms"] },
+    //       })
+    //       .then((otp) => (input.value = otp.code));
+    //   }
+    // }
+    // (async function loadSms() {
+    //   await navigator.credentials
+    //     .get({
+    //       otp: { transport: ["sms"] },
+    //     })
+    //     .then((otp) => {
+    //       setValidationNumber(otp);
+    //     });
+    // })();
     // if ("OTPCredential" in window) {
     //   window.addEventListener("DOMContentLoaded", (e) => {
     //     const input = document.querySelector(
@@ -57,6 +56,11 @@ const validate = () => {
     //       });
     //   });
     // }
+    navigator.credentials
+      .get({
+        otp: { transport: ["sms"] },
+      })
+      .then((otp) => setValidationNumber(otp.code));
   });
   console.log(validation);
   return (
