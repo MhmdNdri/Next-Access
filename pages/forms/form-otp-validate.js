@@ -75,7 +75,9 @@ const validate = () => {
             autoComplete="one-time-code"
             inputMode="numeric"
             value={validation}
-            onChange={(e) => console.log() setValidationNumber(e.target.value)}
+            onChange={
+              ((e) => console.log(otp), setValidationNumber(e.target.value))
+            }
             required
           />
           <input className={styles.onSubmit} type="submit" value="Submit" />
