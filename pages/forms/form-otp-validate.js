@@ -61,7 +61,7 @@ const validate = () => {
         .get({
           otp: { transport: ["sms"] },
         })
-        .then((otp) => console.log(otp), setValidationNumber(otp.code));
+        .then((otp) => console.log(otp));
     }
   });
   console.log(validation);
