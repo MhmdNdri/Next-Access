@@ -11,6 +11,9 @@ const index = () => {
       <Link href="/other-tools/puppeteer">
         <button className={styles.btn}>Puppeteer</button>
       </Link>
+      <Link href="/other-tools/tailwind-ex">
+        <button className={styles.btn}>Netflix clone using Tailwind</button>
+      </Link>
     </div>
   );
 };
