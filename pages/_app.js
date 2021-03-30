@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Snackbar, Button } from "@material-ui/core";
 import { Workbox } from "workbox-window";
+import { Provider } from "next-auth/client";
 import "aos/dist/aos.css";
 import "swiper/swiper-bundle.css";
 import "../styles/TodoContext.css";
@@ -92,7 +93,9 @@ function MyApp({ Component, pageProps, router }) {
           },
         }}
       >
-        <Component {...pageProps} />
+        <Provider session={pageProps.session}>
+          <Component {...pageProps} />
+        </Provider>
       </motion.div>
     </>
   );

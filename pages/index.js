@@ -1,19 +1,37 @@
 import styles from "../styles/Main.module.css";
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/client";
 import { useEffect, useState } from "react";
 import AOS from "aos";
+import "tailwindcss/tailwind.css";
+
 import "aos/dist/aos.css";
 
 // import { Snackbar, Button } from "@material-ui/core";
 // import { Workbox } from "workbox-window";
 
 export default function Home() {
+  const [session, loading] = useSession();
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
-
   return (
     <div className={styles.container}>
+      {!session ? (
+        <button
+          onClick={() => signIn("google")}
+          className="flex items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded"
+        >
+          Sign In
+        </button>
+      ) : (
+        <button
+          onClick={() => signOut()}
+          className="flex items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded"
+        >
+          Sign Out
+        </button>
+      )}
       {/* <h1 className={styles.headerText}> Welcome To This Project</h1> */}
       <Link href="/what-web-can-do">
         <button data-aos="zoom-in-right" className={styles.btn}>

@@ -1,10 +1,8 @@
 import React from "react";
-import { signIn, signOut, useSession } from "next-auth/client";
 import "tailwindcss/tailwind.css";
 import MoviesTitle from "../../components/MoviesTitle";
 import styles from "../../styles/Netflix.module.css";
 const TailwindEx = () => {
-  const [session, loading] = useSession();
   return (
     <div>
       <div
