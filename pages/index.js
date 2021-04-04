@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {!session ? (
-        <div className="flex felx-col flex-col items-center text-center justify-center">
-          <h1 className="xl:text-10xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-sans mb-60 font-bold text-yellow-900 flex-start">
+        <div className="flex felx-col flex-col items-center text-center justify-center ">
+          <h1 className="xl:text-10xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-sans mb-60 font-bold text-[#116cdb] flex-start">
             {" "}
             Welcome To This Project
           </h1>
@@ -31,7 +31,7 @@ export default function Home() {
           </h3>
           <button
             onClick={() => signIn("google")}
-            className="flex outline-none items-center bg-[#e50914] text-white text-base mt-3 font-bold px-5 py-4 rounded-lg"
+            className="flex focus:outline-none items-center bg-[#116cdb] text-white text-base mt-3 font-bold px-5 py-4 rounded-lg"
           >
             Sign In
           </button>

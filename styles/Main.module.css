@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: center;
     background-image: url("../public/bg2.jpg");
-    background-position: bottom;
+    background-position: center;
     align-items: center;
     flex-flow: wrap;
     position: relative;

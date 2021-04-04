@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps, router }) {
     <>
       <Head>
         <title>Accessibilty</title>
-        <base href="/pwa-sample/" />
+        {/* <base href="/pwa-sample/" /> */}
         <link rel="icon" href="tools.png" />
         <link rel="manifest" href="manifest.json" />
         <meta name="theme-color" content="#317EFB" />
