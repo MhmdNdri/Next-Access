@@ -18,32 +18,46 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {!session ? (
-        <div className="flex felx-col flex-col items-center text-center justify-center ">
-          <h1 className="xl:text-10xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-sans mb-60 font-bold text-[#116cdb] flex-start">
-            {" "}
+        <div>
+          <h1 className="xl:text-10xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-sans mb-60 font-bold text-[#116cdb] text-center">
             Welcome To This Project
           </h1>
-          <h2 className="xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl px-10 text-2xl  mb-6 text-yellow-400">
-            At first you must Sign in to see what is going on on this site
-          </h2>
-          <h3 className="font-mono text-lg mb-3">
-            Click the button below to Sign In
-          </h3>
-          <button
-            onClick={() => signIn("google")}
-            className="flex focus:outline-none items-center bg-[#116cdb] text-white text-base mt-3 font-bold px-5 py-4 rounded-lg"
-          >
-            Sign In
-          </button>
+          <div className="flex felx-row items-center text-center justify-center ">
+            <div></div>
+            <div className="flex flex-col items-center text-center justify-center">
+              <h2 className="xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl px-10 text-2xl  mb-6 text-yellow-500">
+                At first you must Sign in to see what is going on on this site
+              </h2>
+              <h3 className="font-mono text-lg mb-3">
+                Click the button below to Sign In
+              </h3>
+              <button
+                onClick={() => signIn("google")}
+                className="flex focus:outline-none items-center bg-[#e50914] text-white text-base mt-3 font-bold px-5 py-4 rounded-lg hover:bg-red-700"
+              >
+                Sign In via Google
+              </button>
+            </div>
+          </div>
         </div>
       ) : (
         <>
-          <button
-            onClick={() => signOut()}
-            className="flex outline-none items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded"
-          >
-            Sign Out
-          </button>
+          <div>
+            <div className="lg:absolute top-10 right-20 flex flex-row ">
+              <h3 className>
+                <span className="mr-3 "> Signed in as :</span>{" "}
+                <span className="font-bold underline text-blue-600 cursor-pointer">
+                  {session.user.email}
+                </span>
+              </h3>
+              <button
+                onClick={() => signOut()}
+                className="flex outline-none items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded ml-10 cursor-pointer outline-none"
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
 
           <Link href="/what-web-can-do">
             <button data-aos="zoom-in-right" className={styles.btn}>
