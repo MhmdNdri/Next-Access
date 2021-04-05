@@ -8,8 +8,8 @@ const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA(
   {
-    // basePath: process.env.ASSETS_PREFIX,
-    // assetPrefix: process.env.ASSETS_PREFIX,
+    basePath: process.env.ASSETS_PREFIX,
+    assetPrefix: process.env.ASSETS_PREFIX,
     images: {
       loader: "imgix",
       path: "",

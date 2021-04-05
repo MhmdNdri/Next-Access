@@ -25,10 +25,10 @@ export default function Home() {
           <div className="flex felx-row items-center text-center justify-center ">
             <div></div>
             <div className="flex flex-col items-center text-center justify-center">
-              <h2 className="xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl px-10 text-2xl  mb-6 text-yellow-500">
+              <h2 className="xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl px-20 text-2xl font-bold mb-6 text-black-500">
                 At first you must Sign in to see what is going on on this site
               </h2>
-              <h3 className="font-mono text-lg mb-3">
+              <h3 className="font-mono text-md mb-3 px-15">
                 Click the button below to Sign In
               </h3>
               <button
