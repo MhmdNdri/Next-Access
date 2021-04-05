@@ -1,21 +1,8 @@
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 
-// module.exports = {
-//   // Target must be serverless
-//   target: "serverless",
-// };
-
 module.exports = withPWA(
   {
-    // basePath: process.env.ASSETS_PREFIX,
-    // assetPrefix: process.env.ASSETS_PREFIX,
-    // images: {
-    //   loader: "imgix",
-    //   path: "",
-    //   // deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    //   // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // },
     pwa: {
       dest: "public",
       // disable: process.env.NODE_ENV === 'development',
@@ -23,7 +10,7 @@ module.exports = withPWA(
     },
 
     // MUST be the same as "start_url" in manifest.json
-    urlPattern: "/",
+    urlPattern: "",
     // use NetworkFirst or NetworkOnly if you redirect un-authenticated user to login page
     // use StaleWhileRevalidate if you want to prompt user to reload when new version available
     handler: "NetworkFirst",

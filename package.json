@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "postbuild": "next-on-netlify"
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -22,11 +21,11 @@
     "jspdf": "^2.3.0",
     "jspdf-react": "^1.0.11",
     "mic-recorder-to-mp3": "^2.2.2",
-    "netlify-cli": "^3.10.11",
+    
     "next": "latest",
     "next-auth": "^3.13.3",
     "next-offline": "^5.0.3",
-    "next-on-netlify": "^2.9.0",
+    
     "next-pwa": "^5.0.4",
     "next-use-contextual-routing": "^2.0.0",
     "puppeteer": "^8.0.0",
