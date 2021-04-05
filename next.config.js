@@ -20,11 +20,10 @@ module.exports = withPWA(
       dest: "public",
       // disable: process.env.NODE_ENV === 'development',
       runtimeCaching,
-      subdomainPrefix: "/pwa-sample/",
     },
 
     // MUST be the same as "start_url" in manifest.json
-    urlPattern: "/pwa-sample/",
+    urlPattern: "/",
     // use NetworkFirst or NetworkOnly if you redirect un-authenticated user to login page
     // use StaleWhileRevalidate if you want to prompt user to reload when new version available
     handler: "NetworkFirst",
