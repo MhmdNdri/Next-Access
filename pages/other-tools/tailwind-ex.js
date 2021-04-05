@@ -8,12 +8,14 @@ const TailwindEx = () => {
       <div
         className="flex flex-col items-center justify-center min-h-screen bg-black z-0"
         //   className={styles.background}
-        style={{
-          // "background-image":
-          //   "linear-gradient(rgba(135, 80, 156, 0.1), rgba(135, 80, 156, 0.9)),url(/netflix-bg.jpg)",
-          "background-image":
-            "linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(/netflix-bg.jpg)",
-        }}
+        style={
+          {
+            // "background-image":
+            //   "linear-gradient(rgba(135, 80, 156, 0.1), rgba(135, 80, 156, 0.9)),url(/netflix-bg.jpg)",
+            // "background-image":
+            //   "linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(/netflix-bg.jpg)",
+          }
+        }
       >
         <main className=" flex flex-col items-center text-center justify-center flex-1 px-20 text-white">
           <h1 className="text-5xl font-bold">
