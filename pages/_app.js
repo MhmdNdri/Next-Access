@@ -1,17 +1,40 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { AnimateSharedLayout } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Snackbar, Button } from "@material-ui/core";
-import { Workbox } from "workbox-window";
+import { IntlProvider } from "react-intl";
 import { Provider } from "next-auth/client";
 import "aos/dist/aos.css";
 import "swiper/swiper-bundle.css";
 import "../styles/TodoContext.css";
 
+const messages = {
+  en: {
+    welcome: "Welcome To This Project",
+    atFirst: "At first you must Sign in to see what is going on on this site",
+    clickSignInMessege: "Click the button below to Sign In",
+    signInButton: "Sign In via Google",
+    selectLanguage: "Select Your Language:",
+  },
+  fr: {
+    welcome: "Bienvenue dans ce projet",
+    atFirst:
+      "Au début, vous devez vous connecter pour voir ce qui se passe sur ce site",
+    clickSignInMessege: "Cliquez sur le bouton ci-dessous pour vous connecter",
+    signInButton: "Connectez-vous via Google",
+    selectLanguage: "Choisissez votre langue:",
+  },
+  nl: {
+    welcome: "Welkom bij dit project",
+    atFirst: "U moet eerst inloggen om te zien wat er op deze site gebeurt",
+    clickSignInMessege: "Klik op de onderstaande knop om in te loggen",
+    signInButton: "Sign In via Google",
+    selectLanguage: "Selecteer je taal:",
+  },
+};
+
 function MyApp({ Component, pageProps, router }) {
+  const { locale } = useRouter();
   return (
     <>
       <Head>
@@ -92,9 +115,11 @@ function MyApp({ Component, pageProps, router }) {
           },
         }}
       >
-        <Provider session={pageProps.session}>
-          <Component {...pageProps} />
-        </Provider>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <Provider session={pageProps.session}>
+            <Component {...pageProps} />
+          </Provider>
+        </IntlProvider>
       </motion.div>
     </>
   );

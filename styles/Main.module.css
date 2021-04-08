@@ -11,6 +11,10 @@
     flex-flow: wrap;
     position: relative;
   }
+  .containerMain{
+    display: flex;
+    flex-direction: row;
+  }
   .headerText{
       position: absolute;
       top: 3%;
@@ -62,7 +66,7 @@
     transform: scaleX(1.2)
   }
   
-  @media only screen and (max-width: 668px) {
+  @media only screen and (max-width: 1168px) {
     div.container{
       flex-direction: column;
     }
@@ -71,5 +75,8 @@
     }
     .headerText{
         display: none;
+    }
+    .containerMain{
+      flex-direction: column;
     }
   }

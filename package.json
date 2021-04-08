@@ -13,7 +13,6 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
-    "firebase": "^8.2.4",
     "formik": "^2.2.6",
     "framer": "^1.2.25",
     "framer-motion": "^3.6.2",
@@ -52,7 +51,8 @@
     "sweetalert2-react-content": "^3.2.2",
     "swipe-js-iso": "^2.1.5",
     "swiper": "^6.4.15",
-    "swr": "^0.4.2",
+    "swr": "^0.3.11",
+    "react-intl": "^5.10.12",
     "workbox-routing": "^6.1.0",
     "workbox-window": "^6.1.0"
   },
