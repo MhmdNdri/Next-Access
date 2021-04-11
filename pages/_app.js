@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import { useEffect } from "react";
+
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { IntlProvider } from "react-intl";
@@ -15,6 +17,13 @@ const messages = {
     clickSignInMessege: "Click the button below to Sign In",
     signInButton: "Sign In via Google",
     selectLanguage: "Select Your Language:",
+  },
+  fa: {
+    welcome: "به این پروژه خوش آمدید",
+    atFirst: "در ابتدا برای دیدن آنچه که در این سایت میگذرد باید ثبت نام کنید",
+    clickSignInMessege: "بر روی دکمه ی زیر کلیک کنید تا ثبت نام شوید",
+    signInButton: "ثبت نام از طریق گوگل",
+    selectLanguage: "زبان مورد نظر را انتخاب کنید :",
   },
   fr: {
     welcome: "Bienvenue dans ce projet",
@@ -35,6 +44,11 @@ const messages = {
 
 function MyApp({ Component, pageProps, router }) {
   const { locale } = useRouter();
+  const dir = locale === "fa" ? "rtl" : "ltr";
+
+  useEffect(() => {
+    document.documentElement.dir = dir;
+  }, [dir]);
   return (
     <>
       <Head>

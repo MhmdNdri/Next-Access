@@ -15,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
+
   return (
     <div className={styles.container}>
       {!session ? (

@@ -12,7 +12,7 @@ const loadData = async (locale) => {
   return data;
 };
 
-const LanguageDropDown = () => {
+const Language = () => {
   const { formatMessage: f } = useIntl();
 
   const { locale, locales } = useRouter();
@@ -28,11 +28,8 @@ const LanguageDropDown = () => {
           </Link>
         </div>
       ))}
-
-      {/* </select> */}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
 
-export default LanguageDropDown;
+export default Language;
