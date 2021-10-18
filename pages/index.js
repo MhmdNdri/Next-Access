@@ -11,9 +11,11 @@ import SignOut from "../components/SignOut";
 
 export default function Home() {
   const [session, loading] = useSession();
+  const { NEXT_ACCESS } = process.env;
 
   useEffect(() => {
     AOS.init({ duration: 2000 });
+    console.log(NEXT_ACCESS);
   }, []);
 
   return (
