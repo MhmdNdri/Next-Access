@@ -27,7 +27,6 @@
     
     "next-pwa": "^5.0.4",
     "next-use-contextual-routing": "^2.0.0",
-    "puppeteer": "^8.0.0",
     "push.js": "^1.0.12",
     "react": "17.0.1",
     "react-copy-to-clipboard": "^5.0.3",
